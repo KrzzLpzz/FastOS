@@ -48,7 +48,7 @@ Partial Class Gallery
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(339, 40)
+        Me.Label2.Location = New System.Drawing.Point(313, 40)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(156, 20)
         Me.Label2.TabIndex = 12
@@ -60,7 +60,7 @@ Partial Class Gallery
         Me.dgvImagenes.AllowUserToResizeColumns = False
         Me.dgvImagenes.AllowUserToResizeRows = False
         Me.dgvImagenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvImagenes.Location = New System.Drawing.Point(343, 63)
+        Me.dgvImagenes.Location = New System.Drawing.Point(317, 63)
         Me.dgvImagenes.MultiSelect = False
         Me.dgvImagenes.Name = "dgvImagenes"
         Me.dgvImagenes.ReadOnly = True
@@ -104,7 +104,7 @@ Partial Class Gallery
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(265, 9)
+        Me.Label1.Location = New System.Drawing.Point(231, 9)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(157, 20)
         Me.Label1.TabIndex = 14
@@ -154,14 +154,14 @@ Partial Class Gallery
         Me.Panel1.Controls.Add(Me.btnVaciar)
         Me.Panel1.Controls.Add(Me.btnExaminar)
         Me.Panel1.Controls.Add(Me.btnGuardar)
-        Me.Panel1.Location = New System.Drawing.Point(51, 316)
+        Me.Panel1.Location = New System.Drawing.Point(25, 316)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(572, 37)
         Me.Panel1.TabIndex = 19
         '
         'txtNombreImagen
         '
-        Me.txtNombreImagen.Location = New System.Drawing.Point(165, 290)
+        Me.txtNombreImagen.Location = New System.Drawing.Point(139, 290)
         Me.txtNombreImagen.Name = "txtNombreImagen"
         Me.txtNombreImagen.Size = New System.Drawing.Size(172, 20)
         Me.txtNombreImagen.TabIndex = 20
@@ -169,7 +169,7 @@ Partial Class Gallery
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(48, 293)
+        Me.Label3.Location = New System.Drawing.Point(22, 293)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(111, 13)
         Me.Label3.TabIndex = 21
@@ -178,7 +178,7 @@ Partial Class Gallery
         'picCamera
         '
         Me.picCamera.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.picCamera.Location = New System.Drawing.Point(51, 40)
+        Me.picCamera.Location = New System.Drawing.Point(25, 40)
         Me.picCamera.Name = "picCamera"
         Me.picCamera.Size = New System.Drawing.Size(286, 244)
         Me.picCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -189,7 +189,7 @@ Partial Class Gallery
         'picImagen
         '
         Me.picImagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.picImagen.Location = New System.Drawing.Point(51, 40)
+        Me.picImagen.Location = New System.Drawing.Point(25, 40)
         Me.picImagen.Name = "picImagen"
         Me.picImagen.Size = New System.Drawing.Size(286, 244)
         Me.picImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -200,7 +200,7 @@ Partial Class Gallery
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(671, 362)
+        Me.ClientSize = New System.Drawing.Size(618, 362)
         Me.Controls.Add(Me.picCamera)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtNombreImagen)

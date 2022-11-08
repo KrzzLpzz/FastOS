@@ -211,7 +211,7 @@ Partial Class Gallery
         Me.Controls.Add(Me.dgvImagenes)
         Me.Controls.Add(Me.picImagen)
         Me.Name = "Gallery"
-        Me.Text = "Gallery"
+        Me.Text = "Galeria"
         CType(Me.dgvImagenes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         CType(Me.picCamera, System.ComponentModel.ISupportInitialize).EndInit()

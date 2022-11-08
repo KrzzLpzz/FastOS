@@ -1,0 +1,6 @@
+2022/10/28-18:35:27.526 3f4 Reusing MANIFEST C:\Users\crisa\source\repos\FastOS\FastOS\bin\Debug\FastOS.exe.WebView2\EBWebView\Default\IndexedDB\https_www.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
+2022/10/28-18:35:27.528 3f4 Recovering log #3
+2022/10/28-18:35:27.550 3f4 Reusing old log C:\Users\crisa\source\repos\FastOS\FastOS\bin\Debug\FastOS.exe.WebView2\EBWebView\Default\IndexedDB\https_www.youtube.com_0.indexeddb.leveldb/000003.log 
+2022/10/28-18:35:31.132 2b58 Level-0 table #5: started
+2022/10/28-18:35:31.146 2b58 Level-0 table #5: 940261 bytes OK
+2022/10/28-18:35:31.148 2b58 Delete type=0 #3

@@ -121,6 +121,7 @@ Partial Class Gallery
         '
         'btnCapturar
         '
+        Me.btnCapturar.Enabled = False
         Me.btnCapturar.Location = New System.Drawing.Point(107, 4)
         Me.btnCapturar.Name = "btnCapturar"
         Me.btnCapturar.Size = New System.Drawing.Size(85, 28)

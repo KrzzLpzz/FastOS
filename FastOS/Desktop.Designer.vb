@@ -30,11 +30,13 @@ Partial Class Desktop
         Me.lblUsernameSave = New System.Windows.Forms.Label()
         Me.lblUserSave = New System.Windows.Forms.Label()
         Me.BtnAdminUsers = New System.Windows.Forms.Button()
+        Me.btnCalculadora = New System.Windows.Forms.Button()
         Me.Screen2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Screen2
         '
+        Me.Screen2.Controls.Add(Me.btnCalculadora)
         Me.Screen2.Controls.Add(Me.btnCerrarSesion)
         Me.Screen2.Controls.Add(Me.btnNavegador)
         Me.Screen2.Controls.Add(Me.btnEditorTexto)
@@ -116,6 +118,15 @@ Partial Class Desktop
         Me.BtnAdminUsers.Text = "Administracion de Usuarios"
         Me.BtnAdminUsers.UseVisualStyleBackColor = True
         '
+        'btnCalculadora
+        '
+        Me.btnCalculadora.Location = New System.Drawing.Point(10, 252)
+        Me.btnCalculadora.Name = "btnCalculadora"
+        Me.btnCalculadora.Size = New System.Drawing.Size(87, 55)
+        Me.btnCalculadora.TabIndex = 7
+        Me.btnCalculadora.Text = "Calculadora"
+        Me.btnCalculadora.UseVisualStyleBackColor = True
+        '
         'Desktop
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -139,4 +150,5 @@ Partial Class Desktop
     Friend WithEvents btnEditorTexto As Button
     Friend WithEvents btnNavegador As Button
     Friend WithEvents btnCerrarSesion As Button
+    Friend WithEvents btnCalculadora As Button
 End Class

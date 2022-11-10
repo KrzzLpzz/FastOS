@@ -79,4 +79,20 @@
     Private Sub Screen2_Paint(sender As Object, e As PaintEventArgs) Handles Screen2.Paint
 
     End Sub
+
+    Private Sub btnCalculadora_Click(sender As Object, e As EventArgs) Handles btnCalculadora.Click
+        Calculadora(New Calculator)
+    End Sub
+
+    Private Sub Calculadora(frmHijo5 As Object)
+        Dim Calculator As New Calculator
+        Calculator = frmHijo5
+        Calculator.TopLevel = False
+        Users.TopMost = True
+
+        Me.Screen2.Controls.Add(Calculator)
+        Me.Screen2.Tag = Calculator
+
+        Calculator.Show()
+    End Sub
 End Class

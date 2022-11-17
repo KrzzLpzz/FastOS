@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.FastOS.FastOS
+            Me.MainForm = Global.FastOS.TextEditor
         End Sub
     End Class
 End Namespace

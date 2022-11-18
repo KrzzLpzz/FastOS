@@ -9,56 +9,67 @@ Public Class TextEditor
     Dim fileName As String
 
     Dim route As String = "Files\tmp\"
-    Dim localfile As String = "test.txt"
+    Dim localfile As String '= "test.txt"
+
+    Dim savedfile As String
 
     Private Sub OpcionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpcionesToolStripMenuItem.Click
 
     End Sub
 
     Private Sub GuardarToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles GuardarToolStripMenuItem1.Click
-        SaveLocal()
+
+        Save()
     End Sub
 
-
     Private Sub Save()
-        Dim OFD As New OpenFileDialog
-
-        If OFD.ShowDialog() = DialogResult.OK Then
-            FilePathName = OFD.FileName
-            fileName = Path.GetFileName(FilePathName)
-            'txtSaveFilePath.Text = FilePathName
-        End If
-
-        SaveFileToDB(FilePathName)
+        SaveLocal()
     End Sub
 
     Private Sub SaveLocal()
         Dim fs As FileStream
 
         ':::Validamos si la carpeta de ruta existe, si no existe la creamos
-        Try
-            If File.Exists(route) Then
 
-                ':::Si la carpeta existe creamos o sobreescribios el archivo txt
-                fs = File.Create(route & localfile)
-                fs.Close()
-                MsgBox("Archivo creado correctamente", MsgBoxStyle.Information, ":::Aprendamos de Programación:::")
-                WriteText()
-            Else
+        If txtTitulo.Text.Replace(" ", "") = "" Then
+            MsgBox("Ingresa un nombre para el archivo.", MsgBoxStyle.Information, ":::Aprendamos de Programación:::")
+        Else
+            localfile = txtTitulo.Text + ".txt"
+            savedfile = localfile
 
-                ':::Si la carpeta no existe la creamos
-                Directory.CreateDirectory(route)
+            Try
+                If File.Exists(route) Then
 
-                ':::Una vez creada la carpeta creamos o sobreescribios el archivo txt
-                fs = File.Create(route & localfile)
-                fs.Close()
-                MsgBox("Archivo creado correctamente", MsgBoxStyle.Information, ":::Aprendamos de Programación:::")
-                WriteText()
-            End If
+                    ':::Si la carpeta existe creamos o sobreescribios el archivo txt
+                    fs = File.Create(route & localfile)
+                    fs.Close()
+                    MsgBox("Archivo creado correctamente", MsgBoxStyle.Information, ":::Aprendamos de Programación:::")
+                    WriteText()
+                Else
 
-        Catch ex As Exception
-            MsgBox("Se presento un problema al momento de crear el archivo: " & ex.Message, MsgBoxStyle.Critical, ":::Aprendamos de Programación:::")
-        End Try
+                    ':::Si la carpeta no existe la creamos
+                    Directory.CreateDirectory(route)
+
+                    ':::Una vez creada la carpeta creamos o sobreescribios el archivo txt
+                    fs = File.Create(route & localfile)
+                    fs.Close()
+                    MsgBox("Archivo creado correctamente", MsgBoxStyle.Information, ":::Aprendamos de Programación:::")
+                    WriteText()
+                End If
+
+
+                FilePathName = route + localfile
+                fileName = Path.GetFileName(FilePathName)
+
+                Label2.Text = FilePathName
+                Label3.Text = fileName
+
+            Catch ex As Exception
+                MsgBox("Se presento un problema al momento de crear el archivo: " & ex.Message, MsgBoxStyle.Critical, ":::Aprendamos de Programación:::")
+            End Try
+        End If
+
+
     End Sub
 
     Private Sub WriteText()
@@ -75,6 +86,8 @@ Public Class TextEditor
 
             ':::Llamamos nuestro procedimiento para leer el archivo TXT
             'LeerArchivo()
+
+            SaveFileToDB(FilePathName)
         Catch ex As Exception
             MsgBox("Se presento un problema al escribir en el archivo: " & ex.Message, MsgBoxStyle.Critical, ":::Aprendamos de Programación:::")
         End Try
@@ -146,5 +159,39 @@ Public Class TextEditor
         ' End Try
 
 
+    End Sub
+
+    Private Sub PegarToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles PegarToolStripMenuItem1.Click
+        rtbEditor.Paste()
+    End Sub
+
+    Private Sub CortarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CortarToolStripMenuItem.Click
+        If rtbEditor.SelectionLength > 0 Then
+            rtbEditor.Cut()
+        End If
+    End Sub
+
+    Private Sub CopiarToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles CopiarToolStripMenuItem1.Click
+        If rtbEditor.SelectionLength > 0 Then
+            rtbEditor.Cut()
+        End If
+    End Sub
+
+    Private Sub SeleccionartodoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SeleccionartodoToolStripMenuItem.Click
+        rtbEditor.SelectAll()
+    End Sub
+
+    Private Sub DeshacerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeshacerToolStripMenuItem.Click
+        rtbEditor.Undo()
+    End Sub
+
+    Private Sub RehacerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RehacerToolStripMenuItem.Click
+        rtbEditor.Redo()
+    End Sub
+
+    Private Sub PersonalizarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PersonalizarToolStripMenuItem.Click
+        FontDialog1.Font = rtbEditor.Font
+        FontDialog1.ShowDialog()
+        rtbEditor.Font = FontDialog1.Font
     End Sub
 End Class

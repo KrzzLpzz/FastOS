@@ -29,6 +29,7 @@ Partial Class TextEditor
         Me.AbrirToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.toolStripSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.GuardarToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ActualizarToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.toolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.SalirToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -61,10 +62,13 @@ Partial Class TextEditor
         Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GuardarCambiosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ActualizarToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtTitulo = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.FontDialog1 = New System.Windows.Forms.FontDialog()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -119,6 +123,14 @@ Partial Class TextEditor
         Me.GuardarToolStripMenuItem1.Size = New System.Drawing.Size(189, 22)
         Me.GuardarToolStripMenuItem1.Text = "&Guardar"
         '
+        'ActualizarToolStripMenuItem1
+        '
+        Me.ActualizarToolStripMenuItem1.Name = "ActualizarToolStripMenuItem1"
+        Me.ActualizarToolStripMenuItem1.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
+            Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
+        Me.ActualizarToolStripMenuItem1.Size = New System.Drawing.Size(189, 22)
+        Me.ActualizarToolStripMenuItem1.Text = "&Actualizar"
+        '
         'toolStripSeparator1
         '
         Me.toolStripSeparator1.Name = "toolStripSeparator1"
@@ -154,7 +166,7 @@ Partial Class TextEditor
         'toolStripSeparator3
         '
         Me.toolStripSeparator3.Name = "toolStripSeparator3"
-        Me.toolStripSeparator3.Size = New System.Drawing.Size(177, 6)
+        Me.toolStripSeparator3.Size = New System.Drawing.Size(160, 6)
         '
         'CortarToolStripMenuItem
         '
@@ -186,7 +198,7 @@ Partial Class TextEditor
         'toolStripSeparator4
         '
         Me.toolStripSeparator4.Name = "toolStripSeparator4"
-        Me.toolStripSeparator4.Size = New System.Drawing.Size(177, 6)
+        Me.toolStripSeparator4.Size = New System.Drawing.Size(160, 6)
         '
         'SeleccionartodoToolStripMenuItem
         '
@@ -197,6 +209,7 @@ Partial Class TextEditor
         'HerramientasToolStripMenuItem
         '
         Me.HerramientasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PersonalizarToolStripMenuItem, Me.OpcionesToolStripMenuItem})
+        Me.HerramientasToolStripMenuItem.Enabled = False
         Me.HerramientasToolStripMenuItem.Name = "HerramientasToolStripMenuItem"
         Me.HerramientasToolStripMenuItem.Size = New System.Drawing.Size(90, 20)
         Me.HerramientasToolStripMenuItem.Text = "&Herramientas"
@@ -210,12 +223,13 @@ Partial Class TextEditor
         'OpcionesToolStripMenuItem
         '
         Me.OpcionesToolStripMenuItem.Name = "OpcionesToolStripMenuItem"
-        Me.OpcionesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.OpcionesToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
         Me.OpcionesToolStripMenuItem.Text = "&Opciones"
         '
         'AyudaToolStripMenuItem
         '
         Me.AyudaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ContenidoToolStripMenuItem, Me.ÍndiceToolStripMenuItem, Me.BuscarToolStripMenuItem, Me.toolStripSeparator5, Me.AcercadeToolStripMenuItem})
+        Me.AyudaToolStripMenuItem.Enabled = False
         Me.AyudaToolStripMenuItem.Name = "AyudaToolStripMenuItem"
         Me.AyudaToolStripMenuItem.Size = New System.Drawing.Size(53, 20)
         Me.AyudaToolStripMenuItem.Text = "Ay&uda"
@@ -223,30 +237,30 @@ Partial Class TextEditor
         'ContenidoToolStripMenuItem
         '
         Me.ContenidoToolStripMenuItem.Name = "ContenidoToolStripMenuItem"
-        Me.ContenidoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ContenidoToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.ContenidoToolStripMenuItem.Text = "&Contenido"
         '
         'ÍndiceToolStripMenuItem
         '
         Me.ÍndiceToolStripMenuItem.Name = "ÍndiceToolStripMenuItem"
-        Me.ÍndiceToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ÍndiceToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.ÍndiceToolStripMenuItem.Text = "Índic&e"
         '
         'BuscarToolStripMenuItem
         '
         Me.BuscarToolStripMenuItem.Name = "BuscarToolStripMenuItem"
-        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.BuscarToolStripMenuItem.Text = "&Buscar"
         '
         'toolStripSeparator5
         '
         Me.toolStripSeparator5.Name = "toolStripSeparator5"
-        Me.toolStripSeparator5.Size = New System.Drawing.Size(177, 6)
+        Me.toolStripSeparator5.Size = New System.Drawing.Size(132, 6)
         '
         'AcercadeToolStripMenuItem
         '
         Me.AcercadeToolStripMenuItem.Name = "AcercadeToolStripMenuItem"
-        Me.AcercadeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AcercadeToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.AcercadeToolStripMenuItem.Text = "&Acerca de..."
         '
         'rtbEditor
@@ -323,29 +337,14 @@ Partial Class TextEditor
         Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
-        'ActualizarToolStripMenuItem1
-        '
-        Me.ActualizarToolStripMenuItem1.Name = "ActualizarToolStripMenuItem1"
-        Me.ActualizarToolStripMenuItem1.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
-            Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
-        Me.ActualizarToolStripMenuItem1.Size = New System.Drawing.Size(189, 22)
-        Me.ActualizarToolStripMenuItem1.Text = "&Actualizar"
-        '
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.TextBox1)
+        Me.Panel1.Controls.Add(Me.txtTitulo)
         Me.Panel1.Location = New System.Drawing.Point(12, 27)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(664, 27)
         Me.Panel1.TabIndex = 2
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(122, 3)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(539, 20)
-        Me.TextBox1.TabIndex = 0
         '
         'Label1
         '
@@ -356,11 +355,48 @@ Partial Class TextEditor
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Nombre del Archivo:"
         '
+        'txtTitulo
+        '
+        Me.txtTitulo.Location = New System.Drawing.Point(122, 3)
+        Me.txtTitulo.Name = "txtTitulo"
+        Me.txtTitulo.Size = New System.Drawing.Size(539, 20)
+        Me.txtTitulo.TabIndex = 0
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(53, 408)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(39, 13)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Label2"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(53, 431)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(39, 13)
+        Me.Label3.TabIndex = 4
+        Me.Label3.Text = "Label3"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(53, 454)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(39, 13)
+        Me.Label4.TabIndex = 5
+        Me.Label4.Text = "Label4"
+        '
         'TextEditor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(686, 390)
+        Me.ClientSize = New System.Drawing.Size(686, 514)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.rtbEditor)
         Me.Controls.Add(Me.MenuStrip1)
@@ -417,5 +453,9 @@ Partial Class TextEditor
     Friend WithEvents ActualizarToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtTitulo As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents FontDialog1 As FontDialog
 End Class

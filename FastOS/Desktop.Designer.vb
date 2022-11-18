@@ -23,6 +23,7 @@ Partial Class Desktop
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Screen2 = New System.Windows.Forms.Panel()
+        Me.btnCalculadora = New System.Windows.Forms.Button()
         Me.btnCerrarSesion = New System.Windows.Forms.Button()
         Me.btnNavegador = New System.Windows.Forms.Button()
         Me.btnEditorTexto = New System.Windows.Forms.Button()
@@ -30,7 +31,6 @@ Partial Class Desktop
         Me.lblUsernameSave = New System.Windows.Forms.Label()
         Me.lblUserSave = New System.Windows.Forms.Label()
         Me.BtnAdminUsers = New System.Windows.Forms.Button()
-        Me.btnCalculadora = New System.Windows.Forms.Button()
         Me.Screen2.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -49,6 +49,15 @@ Partial Class Desktop
         Me.Screen2.Name = "Screen2"
         Me.Screen2.Size = New System.Drawing.Size(1083, 590)
         Me.Screen2.TabIndex = 1
+        '
+        'btnCalculadora
+        '
+        Me.btnCalculadora.Location = New System.Drawing.Point(10, 252)
+        Me.btnCalculadora.Name = "btnCalculadora"
+        Me.btnCalculadora.Size = New System.Drawing.Size(87, 55)
+        Me.btnCalculadora.TabIndex = 7
+        Me.btnCalculadora.Text = "Calculadora"
+        Me.btnCalculadora.UseVisualStyleBackColor = True
         '
         'btnCerrarSesion
         '
@@ -70,7 +79,6 @@ Partial Class Desktop
         '
         'btnEditorTexto
         '
-        Me.btnEditorTexto.Enabled = False
         Me.btnEditorTexto.Location = New System.Drawing.Point(10, 130)
         Me.btnEditorTexto.Name = "btnEditorTexto"
         Me.btnEditorTexto.Size = New System.Drawing.Size(87, 55)
@@ -117,15 +125,6 @@ Partial Class Desktop
         Me.BtnAdminUsers.TabIndex = 0
         Me.BtnAdminUsers.Text = "Administracion de Usuarios"
         Me.BtnAdminUsers.UseVisualStyleBackColor = True
-        '
-        'btnCalculadora
-        '
-        Me.btnCalculadora.Location = New System.Drawing.Point(10, 252)
-        Me.btnCalculadora.Name = "btnCalculadora"
-        Me.btnCalculadora.Size = New System.Drawing.Size(87, 55)
-        Me.btnCalculadora.TabIndex = 7
-        Me.btnCalculadora.Text = "Calculadora"
-        Me.btnCalculadora.UseVisualStyleBackColor = True
         '
         'Desktop
         '

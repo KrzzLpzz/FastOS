@@ -4,6 +4,8 @@ Imports System.Data.Linq
 Imports System.Data.OleDb
 
 Public Class TextEditor
+    Public IDUserGallery As Integer
+
     Dim FilePathName As String
     Dim DirPathName As String
     Dim fileName As String
@@ -22,17 +24,19 @@ Public Class TextEditor
         Save()
     End Sub
 
+    'Guardar
     Private Sub Save()
         SaveLocal()
     End Sub
 
+    'Guarda en Local
     Private Sub SaveLocal()
         Dim fs As FileStream
 
         ':::Validamos si la carpeta de ruta existe, si no existe la creamos
 
         If txtTitulo.Text.Replace(" ", "") = "" Then
-            MsgBox("Ingresa un nombre para el archivo.", MsgBoxStyle.Information, ":::Aprendamos de Programación:::")
+            MsgBox("Ingresa un nombre para el archivo.", MsgBoxStyle.Information, "Editor de Texto")
         Else
             localfile = txtTitulo.Text + ".txt"
             savedfile = localfile
@@ -43,7 +47,7 @@ Public Class TextEditor
                     ':::Si la carpeta existe creamos o sobreescribios el archivo txt
                     fs = File.Create(route & localfile)
                     fs.Close()
-                    MsgBox("Archivo creado correctamente", MsgBoxStyle.Information, ":::Aprendamos de Programación:::")
+                    MsgBox("Archivo creado correctamente", MsgBoxStyle.Information, "Editor de Texto")
                     WriteText()
                 Else
 
@@ -53,25 +57,23 @@ Public Class TextEditor
                     ':::Una vez creada la carpeta creamos o sobreescribios el archivo txt
                     fs = File.Create(route & localfile)
                     fs.Close()
-                    MsgBox("Archivo creado correctamente", MsgBoxStyle.Information, ":::Aprendamos de Programación:::")
+                    MsgBox("Archivo creado correctamente", MsgBoxStyle.Information, "Editor de Texto")
+                    FilePathName = route + localfile
+                    fileName = Path.GetFileName(FilePathName)
+
+                    Label2.Text = FilePathName
+                    Label3.Text = fileName
                     WriteText()
                 End If
-
-
-                FilePathName = route + localfile
-                fileName = Path.GetFileName(FilePathName)
-
-                Label2.Text = FilePathName
-                Label3.Text = fileName
-
             Catch ex As Exception
-                MsgBox("Se presento un problema al momento de crear el archivo: " & ex.Message, MsgBoxStyle.Critical, ":::Aprendamos de Programación:::")
+                MsgBox("Se presento un problema al momento de crear el archivo: " & ex.Message, MsgBoxStyle.Critical, "Editor de Texto")
             End Try
         End If
 
 
     End Sub
 
+    'Escribe en el archivo
     Private Sub WriteText()
         ':::Creamos un objeto de tipo StreamWriter que nos permite escribir en ficheros TXT
         ':::El unico cambio es que agregamos el valor TRUE con el fin de indicar que queremos
@@ -81,7 +83,7 @@ Public Class TextEditor
             ':::Escribimos una linea en nuestro archivo TXT con el formato que este separado por coma (,)
             escribir.WriteLine(rtbEditor.Text)
             escribir.Close()
-            MsgBox("Registro guardado correctamente", MsgBoxStyle.Information, ":::Aprendamos de Programación:::")
+            MsgBox("Registro guardado correctamente", MsgBoxStyle.Information, "Editor de Texto")
             'txtNombre.Clear()
 
             ':::Llamamos nuestro procedimiento para leer el archivo TXT
@@ -89,10 +91,11 @@ Public Class TextEditor
 
             SaveFileToDB(FilePathName)
         Catch ex As Exception
-            MsgBox("Se presento un problema al escribir en el archivo: " & ex.Message, MsgBoxStyle.Critical, ":::Aprendamos de Programación:::")
+            MsgBox("Se presento un problema al escribir en el archivo: " & ex.Message, MsgBoxStyle.Critical, "Editor de Texto")
         End Try
     End Sub
 
+    'Sube el archivo guardado en local a la base de datos
     Private Sub SaveFileToDB(filePath As String)
         Dim file As Byte()
         Dim stream As New FileStream(filePath, FileMode.Open, FileAccess.Read)
@@ -104,10 +107,9 @@ Public Class TextEditor
 
         Conexion.Open()
 
-        'Comando.Parameters.AddWithValue("@Id", LblGID.Text.ToUpper)
+        Comando.Parameters.AddWithValue("@Id", lblTID.Text.ToUpper)
         Comando.Parameters.AddWithValue("@FileName", OleDbType.VarWChar).Value = fileName
         Comando.Parameters.AddWithValue("@FileData", OleDbType.VarBinary).Value = file.ToArray()
-
 
         If (Comando.ExecuteNonQuery) Then
             MessageBox.Show("Archivo Guardado", "Editor de Texto", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -122,6 +124,7 @@ Public Class TextEditor
         'txtSaveFilePath.Clear()
     End Sub
 
+    'Abrir documentos
     Private Sub AbrirToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AbrirToolStripMenuItem1.Click
         Dim FBD As New FolderBrowserDialog
 
@@ -161,6 +164,22 @@ Public Class TextEditor
 
     End Sub
 
+
+    'Cargar datos
+    'Private Sub LoadData()
+    '    gvFile.Rows.Clear()
+    '    query = "Select * From tblFile"
+    '    da = New OleDbDataAdapter(query, con)
+    '    dt = New DataTable("tblFile")
+    '    dt.Clear()
+    '    da.Fill(dt)
+
+    '    For Each row As DataRow In dt.Rows
+    '        gvFile.Rows.Add(row(0).ToString(), row(1), row(2))
+    '    Next
+    'End Sub
+
+    'Funciones de edicion
     Private Sub PegarToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles PegarToolStripMenuItem1.Click
         rtbEditor.Paste()
     End Sub
@@ -193,5 +212,10 @@ Public Class TextEditor
         FontDialog1.Font = rtbEditor.Font
         FontDialog1.ShowDialog()
         rtbEditor.Font = FontDialog1.Font
+    End Sub
+
+    Private Sub TextEditor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        IDUserGallery = FastOS.IDUserGlobal.ToString
+        lblTID.Text = IDUserGallery.ToString
     End Sub
 End Class

@@ -67,7 +67,7 @@ Partial Class TextEditor
         Me.txtTitulo = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblTID = New System.Windows.Forms.Label()
         Me.FontDialog1 = New System.Windows.Forms.FontDialog()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -153,14 +153,14 @@ Partial Class TextEditor
         '
         Me.DeshacerToolStripMenuItem.Name = "DeshacerToolStripMenuItem"
         Me.DeshacerToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Z), System.Windows.Forms.Keys)
-        Me.DeshacerToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.DeshacerToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
         Me.DeshacerToolStripMenuItem.Text = "&Deshacer"
         '
         'RehacerToolStripMenuItem
         '
         Me.RehacerToolStripMenuItem.Name = "RehacerToolStripMenuItem"
         Me.RehacerToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Y), System.Windows.Forms.Keys)
-        Me.RehacerToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.RehacerToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
         Me.RehacerToolStripMenuItem.Text = "&Rehacer"
         '
         'toolStripSeparator3
@@ -174,7 +174,7 @@ Partial Class TextEditor
         Me.CortarToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.CortarToolStripMenuItem.Name = "CortarToolStripMenuItem"
         Me.CortarToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.CortarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CortarToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
         Me.CortarToolStripMenuItem.Text = "Cor&tar"
         '
         'CopiarToolStripMenuItem1
@@ -183,7 +183,7 @@ Partial Class TextEditor
         Me.CopiarToolStripMenuItem1.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.CopiarToolStripMenuItem1.Name = "CopiarToolStripMenuItem1"
         Me.CopiarToolStripMenuItem1.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
-        Me.CopiarToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.CopiarToolStripMenuItem1.Size = New System.Drawing.Size(163, 22)
         Me.CopiarToolStripMenuItem1.Text = "&Copiar"
         '
         'PegarToolStripMenuItem1
@@ -192,7 +192,7 @@ Partial Class TextEditor
         Me.PegarToolStripMenuItem1.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.PegarToolStripMenuItem1.Name = "PegarToolStripMenuItem1"
         Me.PegarToolStripMenuItem1.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.PegarToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.PegarToolStripMenuItem1.Size = New System.Drawing.Size(163, 22)
         Me.PegarToolStripMenuItem1.Text = "&Pegar"
         '
         'toolStripSeparator4
@@ -203,7 +203,7 @@ Partial Class TextEditor
         'SeleccionartodoToolStripMenuItem
         '
         Me.SeleccionartodoToolStripMenuItem.Name = "SeleccionartodoToolStripMenuItem"
-        Me.SeleccionartodoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SeleccionartodoToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
         Me.SeleccionartodoToolStripMenuItem.Text = "&Seleccionar todo"
         '
         'HerramientasToolStripMenuItem
@@ -217,7 +217,7 @@ Partial Class TextEditor
         'PersonalizarToolStripMenuItem
         '
         Me.PersonalizarToolStripMenuItem.Name = "PersonalizarToolStripMenuItem"
-        Me.PersonalizarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PersonalizarToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
         Me.PersonalizarToolStripMenuItem.Text = "&Personalizar"
         '
         'OpcionesToolStripMenuItem
@@ -380,21 +380,21 @@ Partial Class TextEditor
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Label3"
         '
-        'Label4
+        'lblTID
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(53, 454)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(39, 13)
-        Me.Label4.TabIndex = 5
-        Me.Label4.Text = "Label4"
+        Me.lblTID.AutoSize = True
+        Me.lblTID.Location = New System.Drawing.Point(53, 454)
+        Me.lblTID.Name = "lblTID"
+        Me.lblTID.Size = New System.Drawing.Size(39, 13)
+        Me.lblTID.TabIndex = 5
+        Me.lblTID.Text = "Label4"
         '
         'TextEditor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(686, 514)
-        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.lblTID)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Panel1)
@@ -456,6 +456,6 @@ Partial Class TextEditor
     Friend WithEvents txtTitulo As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
+    Friend WithEvents lblTID As Label
     Friend WithEvents FontDialog1 As FontDialog
 End Class

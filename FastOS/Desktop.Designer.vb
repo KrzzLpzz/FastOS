@@ -31,11 +31,15 @@ Partial Class Desktop
         Me.lblUsernameSave = New System.Windows.Forms.Label()
         Me.lblUserSave = New System.Windows.Forms.Label()
         Me.BtnAdminUsers = New System.Windows.Forms.Button()
+        Me.btnTresEnRaya = New System.Windows.Forms.Button()
+        Me.btnSnake = New System.Windows.Forms.Button()
         Me.Screen2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Screen2
         '
+        Me.Screen2.Controls.Add(Me.btnSnake)
+        Me.Screen2.Controls.Add(Me.btnTresEnRaya)
         Me.Screen2.Controls.Add(Me.btnCalculadora)
         Me.Screen2.Controls.Add(Me.btnCerrarSesion)
         Me.Screen2.Controls.Add(Me.btnNavegador)
@@ -126,6 +130,24 @@ Partial Class Desktop
         Me.BtnAdminUsers.Text = "Administracion de Usuarios"
         Me.BtnAdminUsers.UseVisualStyleBackColor = True
         '
+        'btnTresEnRaya
+        '
+        Me.btnTresEnRaya.Location = New System.Drawing.Point(10, 313)
+        Me.btnTresEnRaya.Name = "btnTresEnRaya"
+        Me.btnTresEnRaya.Size = New System.Drawing.Size(87, 55)
+        Me.btnTresEnRaya.TabIndex = 8
+        Me.btnTresEnRaya.Text = "Tres en Raya"
+        Me.btnTresEnRaya.UseVisualStyleBackColor = True
+        '
+        'btnSnake
+        '
+        Me.btnSnake.Location = New System.Drawing.Point(10, 374)
+        Me.btnSnake.Name = "btnSnake"
+        Me.btnSnake.Size = New System.Drawing.Size(87, 55)
+        Me.btnSnake.TabIndex = 9
+        Me.btnSnake.Text = "Snake"
+        Me.btnSnake.UseVisualStyleBackColor = True
+        '
         'Desktop
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -150,4 +172,6 @@ Partial Class Desktop
     Friend WithEvents btnNavegador As Button
     Friend WithEvents btnCerrarSesion As Button
     Friend WithEvents btnCalculadora As Button
+    Friend WithEvents btnTresEnRaya As Button
+    Friend WithEvents btnSnake As Button
 End Class

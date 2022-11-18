@@ -27,6 +27,11 @@ FastOS
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:FastOS.My.Resources.Resources.back">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:FastOS.My.Resources.Resources.bck">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.

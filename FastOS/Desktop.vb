@@ -95,4 +95,35 @@
 
         Calculator.Show()
     End Sub
+
+    Private Sub btnTresEnRaya_Click(sender As Object, e As EventArgs) Handles btnTresEnRaya.Click
+        TresEnRaya(New TresEnRaya)
+    End Sub
+
+    Private Sub TresEnRaya(frmHijo6 As Object)
+        Dim TresEnRaya As New TresEnRaya
+        TresEnRaya = frmHijo6
+        TresEnRaya.TopLevel = False
+        TresEnRaya.TopMost = True
+
+        Me.Screen2.Controls.Add(TresEnRaya)
+        Me.Screen2.Tag = TresEnRaya
+
+        TresEnRaya.Show()
+    End Sub
+    Private Sub Snake(frmHijo7 As Object)
+        Dim Snake As New Snake
+        Snake = frmHijo7
+        snake.TopLevel = False
+        Snake.TopMost = True
+
+        Me.Screen2.Controls.Add(Snake)
+        Me.Screen2.Tag = Snake
+
+        Snake.Show()
+    End Sub
+
+    Private Sub btnSnake_Click(sender As Object, e As EventArgs) Handles btnSnake.Click
+        Snake(New Snake)
+    End Sub
 End Class

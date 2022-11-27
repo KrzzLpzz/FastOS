@@ -20,7 +20,6 @@ Public Class TextEditor
     End Sub
 
     Private Sub GuardarToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles GuardarToolStripMenuItem1.Click
-
         Save()
     End Sub
 
@@ -69,8 +68,6 @@ Public Class TextEditor
                 MsgBox("Se presento un problema al momento de crear el archivo: " & ex.Message, MsgBoxStyle.Critical, "Editor de Texto")
             End Try
         End If
-
-
     End Sub
 
     'Escribe en el archivo
@@ -128,58 +125,16 @@ Public Class TextEditor
     Private Sub AbrirToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AbrirToolStripMenuItem1.Click
         Dim FBD As New FolderBrowserDialog
 
-        If FBD.ShowDialog() = DialogResult.OK Then
-            DirPathName = FBD.SelectedPath
-            ' txtDownloadPath.Text = DirPathName
-        End If
+        'If FBD.ShowDialog() = DialogResult.OK Then
+        'DirPathName = FBD.SelectedPath
+        ' txtDownloadPath.Text = DirPathName
+        'End If
 
-        DownloadFile(DirPathName)
+        'DirPathName = route
+
+        'DownloadFile(DirPathName)
     End Sub
 
-    Private Sub DownloadFile(NewFileLocation As String)
-        '   Try
-        '    NewFileLocation = DirPathName
-        'Dim id As Integer = Convert.ToInt32(gvFile.CurrentRow.Cells(0).Value.ToString())
-        '  query = "Select * From tblFile Where Id=@Id"
-        ' cmd = New OleDbCommand(query, con)
-        'cmd.Parameters.Add("@Id", OleDbType.Integer).Value = id
-        'da = New OleDbDataAdapter(cmd)
-        'dt = New DataTable("tblFile")
-        'dt.Clear()
-        'da.Fill(dt)
-
-        '       For Each row As DataRow In dt.Rows
-
-        '           Dim filebyte As Byte() = row(2)
-        '          Dim fs As New FileStream(NewFileLocation & "\" & row(1), FileMode.Create, FileAccess.Write)
-        '         fs.Write(filebyte, 0, filebyte.Length)
-        '        fs.Close()
-        '   Next
-        '      txtDownloadPath.Clear()
-        '     MessageBox.Show("File Downloaded Successfully", "Download", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        'Catch ex As Exception
-
-        ' End Try
-
-
-    End Sub
-
-
-    'Cargar datos
-    'Private Sub LoadData()
-    '    gvFile.Rows.Clear()
-    '    query = "Select * From tblFile"
-    '    da = New OleDbDataAdapter(query, con)
-    '    dt = New DataTable("tblFile")
-    '    dt.Clear()
-    '    da.Fill(dt)
-
-    '    For Each row As DataRow In dt.Rows
-    '        gvFile.Rows.Add(row(0).ToString(), row(1), row(2))
-    '    Next
-    'End Sub
-
-    'Funciones de edicion
     Private Sub PegarToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles PegarToolStripMenuItem1.Click
         rtbEditor.Paste()
     End Sub

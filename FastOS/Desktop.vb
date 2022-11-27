@@ -1,4 +1,7 @@
-﻿Public Class Desktop
+﻿Imports System
+Imports System.Windows.Forms
+
+Public Class Desktop
     Public UsernameDesk As String
     Public TypeAcc As String
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnAdminUsers.Click
@@ -114,7 +117,7 @@
     Private Sub Snake(frmHijo7 As Object)
         Dim Snake As New Snake
         Snake = frmHijo7
-        snake.TopLevel = False
+        Snake.TopLevel = False
         Snake.TopMost = True
 
         Me.Screen2.Controls.Add(Snake)
@@ -125,5 +128,50 @@
 
     Private Sub btnSnake_Click(sender As Object, e As EventArgs) Handles btnSnake.Click
         Snake(New Snake)
+    End Sub
+
+    Private Sub btnTxtLoad_Click(sender As Object, e As EventArgs) Handles btnTxtLoad.Click
+        Me.Enabled = False
+        FastOS.TXTDownloader()
+        Me.Enabled = True
+        'TxtDownload(New DownloadTXT)
+    End Sub
+
+    Private Sub TxtDownload(frmHijo8 As Object)
+        Dim DownloadTXT As New DownloadTXT
+        DownloadTXT = frmHijo8
+        DownloadTXT.TopLevel = False
+        DownloadTXT.MaximizeBox = False
+        DownloadTXT.TopMost = True
+        DownloadTXT.StartPosition = FormStartPosition.CenterParent
+        DownloadTXT.StartPosition = FormStartPosition.CenterScreen
+        DownloadTXT.FormBorderStyle = FormBorderStyle.FixedSingle
+        DownloadTXT.BringToFront()
+        DownloadTXT.Activate()
+        DownloadTXT.Focus()
+        DownloadTXT.Top = True
+
+
+        DownloadTXT.MdiParent = FastOS
+
+
+        Screen2.Anchor = AnchorStyles.Top
+
+        Screen2.Anchor = AnchorStyles.Left
+
+        DownloadTXT.Top = Screen2.Height / 2 - DownloadTXT.Height / 2
+
+        DownloadTXT.Left = Screen2.Width / 2 - DownloadTXT.Width / 2
+
+        'DownloadTXT.Location = New Point(((Me.ClientSize.Width - DownloadTXT.Width) + Screen2.Width) / 2, ((Me.ClientSize.Height - DownloadTXT.Height) + Screen2.Height) / 2)
+
+        Me.Screen2.Controls.Add(DownloadTXT)
+        Me.Screen2.Tag = DownloadTXT
+        Me.Screen2.BringToFront()
+        Me.Screen2.Top = True
+        Me.Screen2.Focus()
+        Me.Enabled = False
+        DownloadTXT.Show()
+        Me.Enabled = True
     End Sub
 End Class

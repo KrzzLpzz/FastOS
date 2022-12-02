@@ -23,6 +23,7 @@ Partial Class Desktop
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Screen2 = New System.Windows.Forms.Panel()
+        Me.btnTxtLoad = New System.Windows.Forms.Button()
         Me.btnSnake = New System.Windows.Forms.Button()
         Me.btnTresEnRaya = New System.Windows.Forms.Button()
         Me.btnCalculadora = New System.Windows.Forms.Button()
@@ -33,7 +34,6 @@ Partial Class Desktop
         Me.lblUsernameSave = New System.Windows.Forms.Label()
         Me.lblUserSave = New System.Windows.Forms.Label()
         Me.BtnAdminUsers = New System.Windows.Forms.Button()
-        Me.btnTxtLoad = New System.Windows.Forms.Button()
         Me.Screen2.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -55,6 +55,16 @@ Partial Class Desktop
         Me.Screen2.Name = "Screen2"
         Me.Screen2.Size = New System.Drawing.Size(1083, 590)
         Me.Screen2.TabIndex = 1
+        '
+        'btnTxtLoad
+        '
+        Me.btnTxtLoad.Enabled = False
+        Me.btnTxtLoad.Location = New System.Drawing.Point(103, 130)
+        Me.btnTxtLoad.Name = "btnTxtLoad"
+        Me.btnTxtLoad.Size = New System.Drawing.Size(87, 55)
+        Me.btnTxtLoad.TabIndex = 10
+        Me.btnTxtLoad.Text = "txtLoad"
+        Me.btnTxtLoad.UseVisualStyleBackColor = True
         '
         'btnSnake
         '
@@ -149,15 +159,6 @@ Partial Class Desktop
         Me.BtnAdminUsers.TabIndex = 0
         Me.BtnAdminUsers.Text = "Administracion de Usuarios"
         Me.BtnAdminUsers.UseVisualStyleBackColor = True
-        '
-        'btnTxtLoad
-        '
-        Me.btnTxtLoad.Location = New System.Drawing.Point(103, 130)
-        Me.btnTxtLoad.Name = "btnTxtLoad"
-        Me.btnTxtLoad.Size = New System.Drawing.Size(87, 55)
-        Me.btnTxtLoad.TabIndex = 10
-        Me.btnTxtLoad.Text = "txtLoad"
-        Me.btnTxtLoad.UseVisualStyleBackColor = True
         '
         'Desktop
         '

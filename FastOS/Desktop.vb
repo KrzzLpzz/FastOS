@@ -131,13 +131,14 @@ Public Class Desktop
     End Sub
 
     Private Sub btnTxtLoad_Click(sender As Object, e As EventArgs) Handles btnTxtLoad.Click
-        Me.Enabled = False
-        FastOS.TXTDownloader()
-        Me.Enabled = True
-        'TxtDownload(New DownloadTXT)
+        TxtD()
     End Sub
 
-    Private Sub TxtDownload(frmHijo8 As Object)
+    Public Sub TxtD()
+        TxtDownload(New DownloadTXT)
+    End Sub
+
+    Public Sub TxtDownload(frmHijo8 As Object)
         Dim DownloadTXT As New DownloadTXT
         DownloadTXT = frmHijo8
         DownloadTXT.TopLevel = False
@@ -151,19 +152,12 @@ Public Class Desktop
         DownloadTXT.Focus()
         DownloadTXT.Top = True
 
-
         DownloadTXT.MdiParent = FastOS
 
-
         Screen2.Anchor = AnchorStyles.Top
-
         Screen2.Anchor = AnchorStyles.Left
-
         DownloadTXT.Top = Screen2.Height / 2 - DownloadTXT.Height / 2
-
         DownloadTXT.Left = Screen2.Width / 2 - DownloadTXT.Width / 2
-
-        'DownloadTXT.Location = New Point(((Me.ClientSize.Width - DownloadTXT.Width) + Screen2.Width) / 2, ((Me.ClientSize.Height - DownloadTXT.Height) + Screen2.Height) / 2)
 
         Me.Screen2.Controls.Add(DownloadTXT)
         Me.Screen2.Tag = DownloadTXT

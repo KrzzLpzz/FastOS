@@ -8,7 +8,7 @@ Public Class DownloadTXT
 
     Dim FilePathName As String
     Dim DirPathName As String
-    Dim fileName As String
+    Public fileNameD As String
 
     Dim route As String = "Files\tmp\"
     Dim localfile As String '= "test.txt"
@@ -32,8 +32,10 @@ Public Class DownloadTXT
         Try
             NewFileLocation = DirPathName
             Dim idXD As Integer = Convert.ToInt32(dgvFiles.CurrentRow.Cells(0).Value.ToString())
+            fileNameD = Convert.ToString(dgvFiles.CurrentRow.Cells(1).Value.ToString())
+            'TextEditor.txtTitulo = fileNameD
             lblIdFile.Text = idXD.ToString
-            Dim Selection As String = "SELECT * FROM Files Where IdUser='" & lblIdFile.Text & "'"
+            Dim Selection As String = "SELECT * FROM Files Where IdFile='" & lblIdFile.Text & "'"
             Dim cmd As New OleDb.OleDbCommand(Selection, Conexion)
 
             cmd.Parameters.Add("@IdUser", OleDbType.Integer).Value = idXD
@@ -51,13 +53,17 @@ Public Class DownloadTXT
                 fs.Write(filebyte, 0, filebyte.Length)
                 fs.Close()
             Next
-            'txtDownloadPath.Clear()
+
+            Label1.Text = DirPathName + fileNameD
+
+
+            TextEditor.CargarTxt()
+
             MessageBox.Show("File Downloaded Successfully", "Download", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Catch ex As Exception
 
         End Try
     End Sub
-
 
     'Cargar datos
     Private Sub LoadData()

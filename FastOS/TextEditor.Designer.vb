@@ -23,6 +23,7 @@ Partial Class TextEditor
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TextEditor))
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NuevoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -65,12 +66,28 @@ Partial Class TextEditor
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtTitulo = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.lblTID = New System.Windows.Forms.Label()
         Me.FontDialog1 = New System.Windows.Forms.FontDialog()
+        Me.dgvFiles = New System.Windows.Forms.DataGridView()
+        Me.Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NameFile = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FilesDB = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.btnAbrir = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblIdFile = New System.Windows.Forms.Label()
+        Me.lblTID = New System.Windows.Forms.Label()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        CType(Me.dgvFiles, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        Me.Panel4.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -80,7 +97,7 @@ Partial Class TextEditor
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(5, 2, 0, 2)
         Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.MenuStrip1.Size = New System.Drawing.Size(686, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(515, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -265,9 +282,10 @@ Partial Class TextEditor
         '
         'rtbEditor
         '
-        Me.rtbEditor.Location = New System.Drawing.Point(0, 60)
+        Me.rtbEditor.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.rtbEditor.Location = New System.Drawing.Point(0, 0)
         Me.rtbEditor.Name = "rtbEditor"
-        Me.rtbEditor.Size = New System.Drawing.Size(686, 330)
+        Me.rtbEditor.Size = New System.Drawing.Size(515, 341)
         Me.rtbEditor.TabIndex = 1
         Me.rtbEditor.Text = ""
         '
@@ -343,7 +361,7 @@ Partial Class TextEditor
         Me.Panel1.Controls.Add(Me.txtTitulo)
         Me.Panel1.Location = New System.Drawing.Point(12, 27)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(664, 27)
+        Me.Panel1.Size = New System.Drawing.Size(491, 27)
         Me.Panel1.TabIndex = 2
         '
         'Label1
@@ -359,47 +377,156 @@ Partial Class TextEditor
         '
         Me.txtTitulo.Location = New System.Drawing.Point(122, 3)
         Me.txtTitulo.Name = "txtTitulo"
-        Me.txtTitulo.Size = New System.Drawing.Size(539, 20)
+        Me.txtTitulo.Size = New System.Drawing.Size(366, 20)
         Me.txtTitulo.TabIndex = 0
+        '
+        'dgvFiles
+        '
+        Me.dgvFiles.AllowUserToAddRows = False
+        Me.dgvFiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvFiles.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id, Me.NameFile, Me.FilesDB})
+        Me.dgvFiles.Location = New System.Drawing.Point(5, 3)
+        Me.dgvFiles.Name = "dgvFiles"
+        Me.dgvFiles.Size = New System.Drawing.Size(356, 192)
+        Me.dgvFiles.TabIndex = 3
+        '
+        'Id
+        '
+        Me.Id.HeaderText = "Id"
+        Me.Id.Name = "Id"
+        Me.Id.Visible = False
+        '
+        'NameFile
+        '
+        Me.NameFile.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.NameFile.DefaultCellStyle = DataGridViewCellStyle2
+        Me.NameFile.HeaderText = "Nombre del Archivo"
+        Me.NameFile.Name = "NameFile"
+        '
+        'FilesDB
+        '
+        Me.FilesDB.HeaderText = "Archivo"
+        Me.FilesDB.Name = "FilesDB"
+        Me.FilesDB.Visible = False
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.Panel3)
+        Me.Panel2.Controls.Add(Me.dgvFiles)
+        Me.Panel2.Location = New System.Drawing.Point(74, 50)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(367, 240)
+        Me.Panel2.TabIndex = 4
+        Me.Panel2.Visible = False
+        '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.btnCancelar)
+        Me.Panel3.Controls.Add(Me.btnAbrir)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel3.Location = New System.Drawing.Point(0, 199)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(367, 41)
+        Me.Panel3.TabIndex = 4
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.Location = New System.Drawing.Point(186, 9)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancelar.TabIndex = 1
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = True
+        '
+        'btnAbrir
+        '
+        Me.btnAbrir.Location = New System.Drawing.Point(105, 9)
+        Me.btnAbrir.Name = "btnAbrir"
+        Me.btnAbrir.Size = New System.Drawing.Size(75, 23)
+        Me.btnAbrir.TabIndex = 0
+        Me.btnAbrir.Text = "Abrir"
+        Me.btnAbrir.UseVisualStyleBackColor = True
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(53, 408)
+        Me.Label2.Location = New System.Drawing.Point(215, 404)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(39, 13)
-        Me.Label2.TabIndex = 3
+        Me.Label2.TabIndex = 4
         Me.Label2.Text = "Label2"
         '
-        'Label3
+        'lblIdFile
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(53, 431)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(39, 13)
-        Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Label3"
+        Me.lblIdFile.AutoSize = True
+        Me.lblIdFile.ForeColor = System.Drawing.SystemColors.AppWorkspace
+        Me.lblIdFile.Location = New System.Drawing.Point(215, 430)
+        Me.lblIdFile.Name = "lblIdFile"
+        Me.lblIdFile.Size = New System.Drawing.Size(39, 13)
+        Me.lblIdFile.TabIndex = 3
+        Me.lblIdFile.Text = "Label1"
         '
         'lblTID
         '
         Me.lblTID.AutoSize = True
-        Me.lblTID.Location = New System.Drawing.Point(53, 454)
+        Me.lblTID.ForeColor = System.Drawing.SystemColors.AppWorkspace
+        Me.lblTID.Location = New System.Drawing.Point(215, 417)
         Me.lblTID.Name = "lblTID"
         Me.lblTID.Size = New System.Drawing.Size(39, 13)
-        Me.lblTID.TabIndex = 5
-        Me.lblTID.Text = "Label4"
+        Me.lblTID.TabIndex = 2
+        Me.lblTID.Text = "Label1"
+        '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.Panel2)
+        Me.Panel4.Controls.Add(Me.rtbEditor)
+        Me.Panel4.Location = New System.Drawing.Point(0, 56)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(515, 341)
+        Me.Panel4.TabIndex = 5
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(12, 404)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(39, 13)
+        Me.Label3.TabIndex = 6
+        Me.Label3.Text = "Label3"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(12, 417)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(39, 13)
+        Me.Label4.TabIndex = 7
+        Me.Label4.Text = "Label4"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(12, 430)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(39, 13)
+        Me.Label5.TabIndex = 8
+        Me.Label5.Text = "Label5"
         '
         'TextEditor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(686, 514)
-        Me.Controls.Add(Me.lblTID)
-        Me.Controls.Add(Me.Label3)
+        Me.ClientSize = New System.Drawing.Size(515, 457)
+        Me.Controls.Add(Me.lblIdFile)
         Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.lblTID)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.rtbEditor)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Controls.Add(Me.Panel4)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "TextEditor"
         Me.Text = "TextEditor"
@@ -407,6 +534,10 @@ Partial Class TextEditor
         Me.MenuStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.dgvFiles, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel4.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -454,8 +585,20 @@ Partial Class TextEditor
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents txtTitulo As TextBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents lblTID As Label
     Friend WithEvents FontDialog1 As FontDialog
+    Friend WithEvents dgvFiles As DataGridView
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Label2 As Label
+    Friend WithEvents lblIdFile As Label
+    Friend WithEvents lblTID As Label
+    Friend WithEvents btnCancelar As Button
+    Friend WithEvents btnAbrir As Button
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Id As DataGridViewTextBoxColumn
+    Friend WithEvents NameFile As DataGridViewTextBoxColumn
+    Friend WithEvents FilesDB As DataGridViewTextBoxColumn
 End Class

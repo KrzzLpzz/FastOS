@@ -22,7 +22,7 @@ Partial Class DownloadTXT
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgvFiles = New System.Windows.Forms.DataGridView()
         Me.Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NameFile = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -32,6 +32,7 @@ Partial Class DownloadTXT
         Me.lblTID = New System.Windows.Forms.Label()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnAbrir = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.dgvFiles, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -56,8 +57,8 @@ Partial Class DownloadTXT
         'NameFile
         '
         Me.NameFile.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.NameFile.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.NameFile.DefaultCellStyle = DataGridViewCellStyle1
         Me.NameFile.HeaderText = "Nombre del Archivo"
         Me.NameFile.Name = "NameFile"
         '
@@ -69,6 +70,7 @@ Partial Class DownloadTXT
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.lblIdFile)
         Me.Panel1.Controls.Add(Me.lblTID)
         Me.Panel1.Controls.Add(Me.btnCancelar)
@@ -117,6 +119,15 @@ Partial Class DownloadTXT
         Me.btnAbrir.Text = "Abrir"
         Me.btnAbrir.UseVisualStyleBackColor = True
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(4, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(39, 13)
+        Me.Label1.TabIndex = 4
+        Me.Label1.Text = "Label1"
+        '
         'DownloadTXT
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -145,4 +156,5 @@ Partial Class DownloadTXT
     Friend WithEvents Id As DataGridViewTextBoxColumn
     Friend WithEvents NameFile As DataGridViewTextBoxColumn
     Friend WithEvents File As DataGridViewTextBoxColumn
+    Friend WithEvents Label1 As Label
 End Class

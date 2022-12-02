@@ -15,6 +15,8 @@ Public Class TextEditor
 
     Dim savedfile As String
 
+    Dim DownF As String
+
     Private Sub OpcionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpcionesToolStripMenuItem.Click
 
     End Sub
@@ -123,18 +125,79 @@ Public Class TextEditor
 
     'Abrir documentos
     Private Sub AbrirToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AbrirToolStripMenuItem1.Click
-        Dim FBD As New FolderBrowserDialog
-
-        'If FBD.ShowDialog() = DialogResult.OK Then
-        'DirPathName = FBD.SelectedPath
-        ' txtDownloadPath.Text = DirPathName
-        'End If
-
-        'DirPathName = route
-
-        'DownloadFile(DirPathName)
+        Panel2.Visible = True
+        rtbEditor.Visible = False
     End Sub
 
+    Private Sub btnAbrir_Click(sender As Object, e As EventArgs) Handles btnAbrir.Click
+        DirPathName = route
+
+        DownloadFile(DirPathName)
+    End Sub
+
+    Private Sub DownloadFile(NewFileLocation As String)
+        Try
+            NewFileLocation = DirPathName
+            Dim idXD As Integer = Convert.ToInt32(dgvFiles.CurrentRow.Cells(0).Value.ToString())
+            DownF = Convert.ToString(dgvFiles.CurrentRow.Cells(1).Value.ToString())
+            txtTitulo.Text = DownF
+
+            'TextEditor.txtTitulo = fileNameD
+            lblIdFile.Text = idXD.ToString
+            Dim Selection As String = "Select * From Files Where IdFile=@IdFile"
+            Dim cmd As New OleDb.OleDbCommand(Selection, Conexion)
+
+            cmd.Parameters.Add("@IdFile", OleDbType.Integer).Value = idXD
+
+            Dim Adapt As New OleDb.OleDbDataAdapter(cmd)
+            Dim Data As New DataTable()
+
+            Data.Clear()
+            Adapt.Fill(Data)
+
+            For Each row As DataRow In Data.Rows
+
+                Dim filebyte As Byte() = row(3)
+                Dim fs As New FileStream(NewFileLocation & "\" & row(2), FileMode.Create, FileAccess.Write)
+                fs.Write(filebyte, 0, filebyte.Length)
+                fs.Close()
+            Next
+
+            CargarTxt()
+            MessageBox.Show("File Downloaded Successfully", "Download", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Panel2.Visible = False
+            rtbEditor.Visible = True
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Public Sub CargarTxt()
+        Try
+            rtbEditor.LoadFile(route & DownF, RichTextBoxStreamType.PlainText)
+        Catch ex As Exception
+            MsgBox("Se presento un problema al leer el archivo: " & ex.Message, MsgBoxStyle.Critical, ":::Aprendamos de Programación:::")
+        End Try
+    End Sub
+
+    'Cargar datos
+    Private Sub LoadData()
+        Dim Fuel As String = "SELECT * FROM Files Where IdUser='" & lblTID.Text & "'"
+        Dim cmd As New OleDb.OleDbCommand(Fuel, Conexion)
+
+        Dim Adapt As New OleDb.OleDbDataAdapter(cmd)
+        Dim Data As New DataTable
+
+        dgvFiles.Rows.Clear()
+        Adapt.Fill(Data)
+        'dgvFiles.DataSource = Data
+
+        For Each row As DataRow In Data.Rows
+            dgvFiles.Rows.Add(row(0).ToString(), row(2), row(3))
+        Next
+    End Sub
+
+    'Herramientas
     Private Sub PegarToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles PegarToolStripMenuItem1.Click
         rtbEditor.Paste()
     End Sub
@@ -169,8 +232,16 @@ Public Class TextEditor
         rtbEditor.Font = FontDialog1.Font
     End Sub
 
+    'Load
     Private Sub TextEditor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         IDUserGallery = FastOS.IDUserGlobal.ToString
         lblTID.Text = IDUserGallery.ToString
+
+        LoadData()
+    End Sub
+
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        Panel2.Visible = False
+        rtbEditor.Visible = True
     End Sub
 End Class

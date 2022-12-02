@@ -41,15 +41,6 @@
         StartScreen()
     End Sub
 
-    Public Sub TXTDownloader()
-        Dim TXTDownloader As New DownloadTXT
-        TXTDownloader.MdiParent = Me
-        Me.Screen.Controls.Add(TXTDownloader)
-
-        TXTDownloader.ShowDialog()
-
-    End Sub
-
     'Public Sub UsersAdmin()
     'Dim Users As New Users
     '   Users.MdiParent = Me

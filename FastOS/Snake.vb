@@ -116,7 +116,8 @@ Public Class Snake
     End Sub
 
     Private Sub initialize()
-
+        Dim g As Graphics = Graphics.FromImage(My.Resources.back)
+        buffer = New Bitmap(My.Resources.back)
         curRecCount = INITIAL_SNAKE_RECT_COUNT
         curDirection = Direction.Leftward
         snakePoints = 0

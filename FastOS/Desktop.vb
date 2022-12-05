@@ -168,4 +168,20 @@ Public Class Desktop
         DownloadTXT.Show()
         Me.Enabled = True
     End Sub
+
+    Private Sub btnPlayer_Click(sender As Object, e As EventArgs) Handles btnPlayer.Click
+        MP3Player(New MP3Player)
+    End Sub
+
+    Private Sub MP3Player(frmHijo8 As Object)
+        Dim MP3Player As New MP3Player
+        MP3Player = frmHijo8
+        MP3Player.TopLevel = False
+        MP3Player.TopMost = True
+
+        Me.Screen2.Controls.Add(MP3Player)
+        Me.Screen2.Tag = MP3Player
+
+        MP3Player.Show()
+    End Sub
 End Class

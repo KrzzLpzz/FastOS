@@ -34,11 +34,13 @@ Partial Class Desktop
         Me.lblUsernameSave = New System.Windows.Forms.Label()
         Me.lblUserSave = New System.Windows.Forms.Label()
         Me.BtnAdminUsers = New System.Windows.Forms.Button()
+        Me.btnPlayer = New System.Windows.Forms.Button()
         Me.Screen2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Screen2
         '
+        Me.Screen2.Controls.Add(Me.btnPlayer)
         Me.Screen2.Controls.Add(Me.btnTxtLoad)
         Me.Screen2.Controls.Add(Me.btnSnake)
         Me.Screen2.Controls.Add(Me.btnTresEnRaya)
@@ -68,7 +70,8 @@ Partial Class Desktop
         '
         'btnSnake
         '
-        Me.btnSnake.Location = New System.Drawing.Point(10, 374)
+        Me.btnSnake.Enabled = False
+        Me.btnSnake.Location = New System.Drawing.Point(103, 313)
         Me.btnSnake.Name = "btnSnake"
         Me.btnSnake.Size = New System.Drawing.Size(87, 55)
         Me.btnSnake.TabIndex = 9
@@ -160,6 +163,15 @@ Partial Class Desktop
         Me.BtnAdminUsers.Text = "Administracion de Usuarios"
         Me.BtnAdminUsers.UseVisualStyleBackColor = True
         '
+        'btnPlayer
+        '
+        Me.btnPlayer.Location = New System.Drawing.Point(10, 374)
+        Me.btnPlayer.Name = "btnPlayer"
+        Me.btnPlayer.Size = New System.Drawing.Size(87, 55)
+        Me.btnPlayer.TabIndex = 11
+        Me.btnPlayer.Text = "Reproductor"
+        Me.btnPlayer.UseVisualStyleBackColor = True
+        '
         'Desktop
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -187,4 +199,5 @@ Partial Class Desktop
     Friend WithEvents btnTresEnRaya As Button
     Friend WithEvents btnSnake As Button
     Friend WithEvents btnTxtLoad As Button
+    Friend WithEvents btnPlayer As Button
 End Class

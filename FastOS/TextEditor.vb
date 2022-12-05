@@ -21,11 +21,11 @@ Public Class TextEditor
 
     End Sub
 
+    'Guardar
     Private Sub GuardarToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles GuardarToolStripMenuItem1.Click
         Save()
     End Sub
 
-    'Guardar
     Private Sub Save()
         SaveLocal()
     End Sub
@@ -141,6 +141,7 @@ Public Class TextEditor
             Dim idXD As Integer = Convert.ToInt32(dgvFiles.CurrentRow.Cells(0).Value.ToString())
             DownF = Convert.ToString(dgvFiles.CurrentRow.Cells(1).Value.ToString())
             txtTitulo.Text = DownF
+            txtTitulo.Enabled = False
 
             'TextEditor.txtTitulo = fileNameD
             lblIdFile.Text = idXD.ToString
@@ -243,5 +244,19 @@ Public Class TextEditor
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Panel2.Visible = False
         rtbEditor.Visible = True
+    End Sub
+
+    Private Sub NuevoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevoToolStripMenuItem.Click
+        If MsgBox("¿Quieres elaborar un nuevo documento de texto?", vbQuestion + vbYesNo, "Editor de Texto") = DialogResult.Yes Then
+            rtbEditor.Text = ""
+            txtTitulo.Text = ""
+            txtTitulo.Enabled = True
+        End If
+    End Sub
+
+    Private Sub ActualizarToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ActualizarToolStripMenuItem1.Click
+        If MsgBox("¿Quieres actualizar este documento?", vbQuestion + vbYesNo, "Editor de Texto") = DialogResult.Yes Then
+
+        End If
     End Sub
 End Class

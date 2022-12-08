@@ -2,7 +2,6 @@
     Public UsernameDesk As String
     Public TypeAcc As String
 
-
     Private Sub tmrOcultar_Tick(sender As Object, e As EventArgs) Handles tmrOcultar.Tick
         If PanelMenu.Width <= 60 Then
             Me.tmrOcultar.Enabled = False
@@ -120,5 +119,39 @@
     Private Sub btnCalculator_Click(sender As Object, e As EventArgs) Handles btnCalculator.Click
         AbrirFormEnPanel(Of Calculator)()
         ocultar()
+    End Sub
+
+    Private Sub btnTXTEditor_Click(sender As Object, e As EventArgs) Handles btnTXTEditor.Click
+        AbrirFormEnPanel(Of TextEditor)()
+        ocultar()
+    End Sub
+
+    Private Sub btnPlayer_Click(sender As Object, e As EventArgs) Handles btnPlayer.Click
+        AbrirFormEnPanel(Of MP3Player)()
+        ocultar()
+    End Sub
+
+    Private Sub btnTicTacToe_Click(sender As Object, e As EventArgs) Handles btnTicTacToe.Click
+        AbrirFormEnPanel(Of TresEnRaya)()
+        ocultar()
+    End Sub
+
+    Private Sub btnGallery_Click(sender As Object, e As EventArgs) Handles btnGallery.Click
+        AbrirFormEnPanel(Of Gallery)()
+        ocultar()
+    End Sub
+
+    Private Sub btnApagar_Click(sender As Object, e As EventArgs) Handles btnApagar.Click
+        If MsgBox("¿Está seguro que desea apagar el sistema?", vbQuestion + vbYesNo, "FastOS") = DialogResult.Yes Then
+            Application.Exit()
+        End If
+    End Sub
+
+    Private Sub IconButton2_Click(sender As Object, e As EventArgs) Handles IconButton2.Click
+        If MsgBox("¿Está seguro que desea cerrar sesion?", vbQuestion + vbYesNo, "FastOS") = DialogResult.Yes Then
+            Me.Close()
+            FastOS.Screen.Controls.Clear()
+            FastOS.LoginScreen()
+        End If
     End Sub
 End Class

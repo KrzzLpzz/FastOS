@@ -13,6 +13,7 @@
     Public Sub LoginScreen()
         Dim Login As New Login
         Login.MdiParent = Me
+        Login.Dock = DockStyle.Fill
         Me.Screen.Controls.Add(Login)
         Login.Show()
     End Sub
@@ -20,6 +21,7 @@
     Public Sub StartScreen()
         Dim LoadScreen As New LoadScreen
         LoadScreen.MdiParent = Me
+        LoadScreen.Dock = DockStyle.Fill
         Me.Screen.Controls.Add(LoadScreen)
         LoadScreen.Show()
         LSTimer.Start()
@@ -31,10 +33,12 @@
     End Sub
 
     Public Sub Desktop()
-        Dim Desktop As New Desktop
-        Desktop.MdiParent = Me
-        Me.Screen.Controls.Add(Desktop)
-        Desktop.Show()
+        Dim FastOS_Desktop As New FastOS_Desktop
+        FastOS_Desktop.MdiParent = Me
+        FastOS_Desktop.Dock = DockStyle.Fill
+        Me.Screen.Controls.Add(FastOS_Desktop)
+        FastOS_Desktop.Show()
+
     End Sub
 
     Private Sub FastOS_Load(sender As Object, e As EventArgs) Handles MyBase.Load

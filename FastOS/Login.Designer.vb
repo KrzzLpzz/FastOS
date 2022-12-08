@@ -59,6 +59,7 @@ Partial Class Login
         '
         'pnlLogin
         '
+        Me.pnlLogin.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.pnlLogin.BackColor = System.Drawing.Color.Transparent
         Me.pnlLogin.Controls.Add(Me.txtPassword)
         Me.pnlLogin.Controls.Add(Me.txtUser)
@@ -75,6 +76,7 @@ Partial Class Login
         '
         'lblHora
         '
+        Me.lblHora.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lblHora.BackColor = System.Drawing.Color.Transparent
         Me.lblHora.Font = New System.Drawing.Font("Segoe UI Variable Small Semibol", 82.0!, System.Drawing.FontStyle.Bold)
         Me.lblHora.ForeColor = System.Drawing.Color.White

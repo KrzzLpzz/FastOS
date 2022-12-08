@@ -29,7 +29,9 @@ Partial Class FastOS
         '
         'Screen
         '
-        Me.Screen.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Screen.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Screen.Location = New System.Drawing.Point(0, 0)
         Me.Screen.Name = "Screen"
         Me.Screen.Size = New System.Drawing.Size(1083, 590)
@@ -46,8 +48,8 @@ Partial Class FastOS
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1083, 590)
         Me.Controls.Add(Me.Screen)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.IsMdiContainer = True
+        Me.MinimumSize = New System.Drawing.Size(1099, 629)
         Me.Name = "FastOS"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FastOS"

@@ -33,6 +33,9 @@
         PanelLogin.Height = 0
         tmrHora.Interval = 1000
         ocultar()
+
+        PanelEscritorio.Parent = PictureBox1
+        PanelEscritorio.BackColor = Color.Transparent
     End Sub
 
     Private Sub btnMenu_Click(sender As Object, e As EventArgs) Handles btnMenu.Click
@@ -66,8 +69,10 @@
     Private Sub btnPower_Click(sender As Object, e As EventArgs) Handles btnPower.Click
         If PanelLogin.Height = 100 Then
             tmrOcultar2.Enabled = True
+            btnPower.BackColor = Color.FromArgb(184, 50, 50)
         ElseIf PanelLogin.Height = 0 Then
             tmrMostrar2.Enabled = True
+            btnPower.BackColor = Color.FromArgb(220, 60, 60)
         End If
     End Sub
 
@@ -100,50 +105,71 @@
     'METODO/EVENTO AL CERRAR FORMS
     Private Sub CerrarFormulario(ByVal sender As Object, ByVal e As FormClosedEventArgs)
         'CONDICION SI FORMS ESTA ABIERTO
-        If (Application.OpenForms("Form1") Is Nothing) Then
-            'Button1.BackColor = Color.FromArgb(4, 41, 68)
+        If (Application.OpenForms("Browser") Is Nothing) Then
+            btnBrowser.BackColor = Color.FromArgb(184, 50, 50)
         End If
-        If (Application.OpenForms("Form2") Is Nothing) Then
-            'Button2.BackColor = Color.FromArgb(4, 41, 68)
+        If (Application.OpenForms("Calculator") Is Nothing) Then
+            btnCalculator.BackColor = Color.FromArgb(184, 50, 50)
         End If
-        If (Application.OpenForms("Form3") Is Nothing) Then
+        If (Application.OpenForms("TextEditor") Is Nothing) Then
+            btnTXTEditor.BackColor = Color.FromArgb(184, 50, 50)
+        End If
+        If (Application.OpenForms("MP3Player") Is Nothing) Then
+            btnPlayer.BackColor = Color.FromArgb(184, 50, 50)
+        End If
+        If (Application.OpenForms("TresEnRaya") Is Nothing) Then
+            btnTicTacToe.BackColor = Color.FromArgb(184, 50, 50)
+        End If
+        If (Application.OpenForms("Gallery") Is Nothing) Then
+            btnGallery.BackColor = Color.FromArgb(184, 50, 50)
+        End If
+        If (Application.OpenForms("Users") Is Nothing) Then
+            btnSettings.BackColor = Color.FromArgb(184, 50, 50)
+        End If
+        If (Application.OpenForms("form2") Is Nothing) Then
             'Button3.BackColor = Color.FromArgb(4, 41, 68)
         End If
     End Sub
 
     Private Sub btnBrowser_Click(sender As Object, e As EventArgs) Handles btnBrowser.Click
         AbrirFormEnPanel(Of Browser)()
+        btnBrowser.BackColor = Color.FromArgb(220, 60, 60)
         ocultar()
     End Sub
 
     Private Sub btnCalculator_Click(sender As Object, e As EventArgs) Handles btnCalculator.Click
         AbrirFormEnPanel(Of Calculator)()
+        btnCalculator.BackColor = Color.FromArgb(220, 60, 60)
         ocultar()
     End Sub
 
     Private Sub btnTXTEditor_Click(sender As Object, e As EventArgs) Handles btnTXTEditor.Click
         AbrirFormEnPanel(Of TextEditor)()
+        btnTXTEditor.BackColor = Color.FromArgb(220, 60, 60)
         ocultar()
     End Sub
 
     Private Sub btnPlayer_Click(sender As Object, e As EventArgs) Handles btnPlayer.Click
         AbrirFormEnPanel(Of MP3Player)()
+        btnPlayer.BackColor = Color.FromArgb(220, 60, 60)
         ocultar()
     End Sub
 
     Private Sub btnTicTacToe_Click(sender As Object, e As EventArgs) Handles btnTicTacToe.Click
         AbrirFormEnPanel(Of TresEnRaya)()
+        btnTicTacToe.BackColor = Color.FromArgb(220, 60, 60)
         ocultar()
     End Sub
 
     Private Sub btnGallery_Click(sender As Object, e As EventArgs) Handles btnGallery.Click
         AbrirFormEnPanel(Of Gallery)()
+        btnGallery.BackColor = Color.FromArgb(220, 60, 60)
         ocultar()
     End Sub
 
     Private Sub btnApagar_Click(sender As Object, e As EventArgs) Handles btnApagar.Click
         If MsgBox("¿Está seguro que desea apagar el sistema?", vbQuestion + vbYesNo, "FastOS") = DialogResult.Yes Then
-            Application.Exit()
+            End
         End If
     End Sub
 
@@ -153,5 +179,11 @@
             FastOS.Screen.Controls.Clear()
             FastOS.LoginScreen()
         End If
+    End Sub
+
+    Private Sub btnSettings_Click(sender As Object, e As EventArgs) Handles btnSettings.Click
+        AbrirFormEnPanel(Of Users)()
+        btnSettings.BackColor = Color.FromArgb(220, 60, 60)
+        ocultar()
     End Sub
 End Class

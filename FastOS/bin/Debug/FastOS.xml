@@ -67,7 +67,42 @@ FastOS
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:FastOS.My.Resources.Resources.img100">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:FastOS.My.Resources.Resources.img100_blur">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:FastOS.My.Resources.Resources.img101">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:FastOS.My.Resources.Resources.img102">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:FastOS.My.Resources.Resources.img103">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:FastOS.My.Resources.Resources.img1031">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:FastOS.My.Resources.Resources.img104">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:FastOS.My.Resources.Resources.img105">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
@@ -118,6 +153,46 @@ FastOS
 </summary>
 </member>
 <member name="P:FastOS.My.Resources.Resources.tanit">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:FastOS.My.Resources.Resources.TouchKeyboardThemeDark000">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:FastOS.My.Resources.Resources.TouchKeyboardThemeDark001">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:FastOS.My.Resources.Resources.TouchKeyboardThemeDark002">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:FastOS.My.Resources.Resources.TouchKeyboardThemeDark003">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:FastOS.My.Resources.Resources.TouchKeyboardThemeLight000">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:FastOS.My.Resources.Resources.TouchKeyboardThemeLight001">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:FastOS.My.Resources.Resources.TouchKeyboardThemeLight002">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:FastOS.My.Resources.Resources.TouchKeyboardThemeLight003">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>

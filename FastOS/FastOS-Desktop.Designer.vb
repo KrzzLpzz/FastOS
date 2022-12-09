@@ -25,6 +25,18 @@ Partial Class FastOS_Desktop
         Me.components = New System.ComponentModel.Container()
         Me.tmrMostrar = New System.Windows.Forms.Timer(Me.components)
         Me.PanelMenu = New System.Windows.Forms.Panel()
+        Me.PanelEscritorio = New System.Windows.Forms.Panel()
+        Me.PanelLogin = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lblFecha = New System.Windows.Forms.Label()
+        Me.lblHora = New System.Windows.Forms.Label()
+        Me.tmrOcultar = New System.Windows.Forms.Timer(Me.components)
+        Me.tmrHora = New System.Windows.Forms.Timer(Me.components)
+        Me.tmrMostrar2 = New System.Windows.Forms.Timer(Me.components)
+        Me.tmrOcultar2 = New System.Windows.Forms.Timer(Me.components)
+        Me.IconButton2 = New FontAwesome.Sharp.IconButton()
+        Me.btnApagar = New FontAwesome.Sharp.IconButton()
+        Me.btnPower = New FontAwesome.Sharp.IconButton()
         Me.btnMenu = New FontAwesome.Sharp.IconButton()
         Me.btnSettings = New FontAwesome.Sharp.IconButton()
         Me.btnGallery = New FontAwesome.Sharp.IconButton()
@@ -33,33 +45,24 @@ Partial Class FastOS_Desktop
         Me.btnTXTEditor = New FontAwesome.Sharp.IconButton()
         Me.btnCalculator = New FontAwesome.Sharp.IconButton()
         Me.btnBrowser = New FontAwesome.Sharp.IconButton()
-        Me.PanelEscritorio = New System.Windows.Forms.Panel()
-        Me.PanelLogin = New System.Windows.Forms.Panel()
-        Me.IconButton2 = New FontAwesome.Sharp.IconButton()
-        Me.btnApagar = New FontAwesome.Sharp.IconButton()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnPower = New FontAwesome.Sharp.IconButton()
-        Me.lblFecha = New System.Windows.Forms.Label()
-        Me.lblHora = New System.Windows.Forms.Label()
-        Me.tmrOcultar = New System.Windows.Forms.Timer(Me.components)
-        Me.tmrHora = New System.Windows.Forms.Timer(Me.components)
-        Me.tmrMostrar2 = New System.Windows.Forms.Timer(Me.components)
-        Me.tmrOcultar2 = New System.Windows.Forms.Timer(Me.components)
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PanelMenu.SuspendLayout()
         Me.PanelLogin.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tmrMostrar
         '
-        Me.tmrMostrar.Interval = 15
+        Me.tmrMostrar.Interval = 10
         '
         'PanelMenu
         '
-        Me.PanelMenu.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.PanelMenu.BackColor = System.Drawing.Color.FromArgb(CType(CType(184, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.PanelMenu.Controls.Add(Me.btnMenu)
         Me.PanelMenu.Controls.Add(Me.btnSettings)
         Me.PanelMenu.Controls.Add(Me.btnGallery)
+        Me.PanelMenu.Controls.Add(Me.PanelEscritorio)
         Me.PanelMenu.Controls.Add(Me.btnTicTacToe)
         Me.PanelMenu.Controls.Add(Me.btnPlayer)
         Me.PanelMenu.Controls.Add(Me.btnTXTEditor)
@@ -71,156 +74,22 @@ Partial Class FastOS_Desktop
         Me.PanelMenu.Size = New System.Drawing.Size(60, 590)
         Me.PanelMenu.TabIndex = 0
         '
-        'btnMenu
-        '
-        Me.btnMenu.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnMenu.FlatAppearance.BorderSize = 0
-        Me.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMenu.IconChar = FontAwesome.Sharp.IconChar.Home
-        Me.btnMenu.IconColor = System.Drawing.Color.Black
-        Me.btnMenu.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.btnMenu.IconSize = 30
-        Me.btnMenu.Location = New System.Drawing.Point(4, 3)
-        Me.btnMenu.Name = "btnMenu"
-        Me.btnMenu.Size = New System.Drawing.Size(50, 50)
-        Me.btnMenu.TabIndex = 15
-        Me.btnMenu.UseVisualStyleBackColor = True
-        '
-        'btnSettings
-        '
-        Me.btnSettings.FlatAppearance.BorderSize = 0
-        Me.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSettings.IconChar = FontAwesome.Sharp.IconChar.UsersCog
-        Me.btnSettings.IconColor = System.Drawing.Color.Black
-        Me.btnSettings.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.btnSettings.IconSize = 50
-        Me.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSettings.Location = New System.Drawing.Point(3, 411)
-        Me.btnSettings.Name = "btnSettings"
-        Me.btnSettings.Size = New System.Drawing.Size(191, 50)
-        Me.btnSettings.TabIndex = 14
-        Me.btnSettings.Text = "     Configuraciones"
-        Me.btnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSettings.UseVisualStyleBackColor = True
-        '
-        'btnGallery
-        '
-        Me.btnGallery.FlatAppearance.BorderSize = 0
-        Me.btnGallery.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGallery.IconChar = FontAwesome.Sharp.IconChar.Images
-        Me.btnGallery.IconColor = System.Drawing.Color.Black
-        Me.btnGallery.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.btnGallery.IconSize = 50
-        Me.btnGallery.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnGallery.Location = New System.Drawing.Point(3, 355)
-        Me.btnGallery.Name = "btnGallery"
-        Me.btnGallery.Size = New System.Drawing.Size(191, 50)
-        Me.btnGallery.TabIndex = 13
-        Me.btnGallery.Text = "     Galeria"
-        Me.btnGallery.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnGallery.UseVisualStyleBackColor = True
-        '
-        'btnTicTacToe
-        '
-        Me.btnTicTacToe.FlatAppearance.BorderSize = 0
-        Me.btnTicTacToe.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTicTacToe.IconChar = FontAwesome.Sharp.IconChar.Gamepad
-        Me.btnTicTacToe.IconColor = System.Drawing.Color.Black
-        Me.btnTicTacToe.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.btnTicTacToe.IconSize = 50
-        Me.btnTicTacToe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnTicTacToe.Location = New System.Drawing.Point(3, 299)
-        Me.btnTicTacToe.Name = "btnTicTacToe"
-        Me.btnTicTacToe.Size = New System.Drawing.Size(191, 50)
-        Me.btnTicTacToe.TabIndex = 12
-        Me.btnTicTacToe.Text = "     Tres en Raya"
-        Me.btnTicTacToe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnTicTacToe.UseVisualStyleBackColor = True
-        '
-        'btnPlayer
-        '
-        Me.btnPlayer.FlatAppearance.BorderSize = 0
-        Me.btnPlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPlayer.IconChar = FontAwesome.Sharp.IconChar.Play
-        Me.btnPlayer.IconColor = System.Drawing.Color.Black
-        Me.btnPlayer.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.btnPlayer.IconSize = 50
-        Me.btnPlayer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnPlayer.Location = New System.Drawing.Point(3, 243)
-        Me.btnPlayer.Name = "btnPlayer"
-        Me.btnPlayer.Size = New System.Drawing.Size(191, 50)
-        Me.btnPlayer.TabIndex = 11
-        Me.btnPlayer.Text = "     Reproductor de Musica"
-        Me.btnPlayer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnPlayer.UseVisualStyleBackColor = True
-        '
-        'btnTXTEditor
-        '
-        Me.btnTXTEditor.FlatAppearance.BorderSize = 0
-        Me.btnTXTEditor.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTXTEditor.IconChar = FontAwesome.Sharp.IconChar.FileAlt
-        Me.btnTXTEditor.IconColor = System.Drawing.Color.Black
-        Me.btnTXTEditor.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.btnTXTEditor.IconSize = 50
-        Me.btnTXTEditor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnTXTEditor.Location = New System.Drawing.Point(3, 187)
-        Me.btnTXTEditor.Name = "btnTXTEditor"
-        Me.btnTXTEditor.Size = New System.Drawing.Size(191, 50)
-        Me.btnTXTEditor.TabIndex = 10
-        Me.btnTXTEditor.Text = "     Editor de Texto"
-        Me.btnTXTEditor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnTXTEditor.UseVisualStyleBackColor = True
-        '
-        'btnCalculator
-        '
-        Me.btnCalculator.FlatAppearance.BorderSize = 0
-        Me.btnCalculator.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCalculator.IconChar = FontAwesome.Sharp.IconChar.Calculator
-        Me.btnCalculator.IconColor = System.Drawing.Color.Black
-        Me.btnCalculator.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.btnCalculator.IconSize = 50
-        Me.btnCalculator.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCalculator.Location = New System.Drawing.Point(3, 131)
-        Me.btnCalculator.Name = "btnCalculator"
-        Me.btnCalculator.Size = New System.Drawing.Size(191, 50)
-        Me.btnCalculator.TabIndex = 9
-        Me.btnCalculator.Text = "     Calculadora"
-        Me.btnCalculator.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnCalculator.UseVisualStyleBackColor = True
-        '
-        'btnBrowser
-        '
-        Me.btnBrowser.FlatAppearance.BorderSize = 0
-        Me.btnBrowser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBrowser.IconChar = FontAwesome.Sharp.IconChar.Chrome
-        Me.btnBrowser.IconColor = System.Drawing.Color.Black
-        Me.btnBrowser.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.btnBrowser.IconSize = 50
-        Me.btnBrowser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBrowser.Location = New System.Drawing.Point(3, 75)
-        Me.btnBrowser.Name = "btnBrowser"
-        Me.btnBrowser.Size = New System.Drawing.Size(191, 50)
-        Me.btnBrowser.TabIndex = 8
-        Me.btnBrowser.Text = "     Navegador"
-        Me.btnBrowser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnBrowser.UseVisualStyleBackColor = True
-        '
         'PanelEscritorio
         '
         Me.PanelEscritorio.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PanelEscritorio.AutoSize = True
-        Me.PanelEscritorio.BackColor = System.Drawing.SystemColors.ControlDark
-        Me.PanelEscritorio.Location = New System.Drawing.Point(60, 0)
+        Me.PanelEscritorio.BackColor = System.Drawing.Color.Transparent
+        Me.PanelEscritorio.Location = New System.Drawing.Point(0, 0)
         Me.PanelEscritorio.Name = "PanelEscritorio"
-        Me.PanelEscritorio.Size = New System.Drawing.Size(1023, 540)
+        Me.PanelEscritorio.Size = New System.Drawing.Size(1083, 540)
         Me.PanelEscritorio.TabIndex = 1
         '
         'PanelLogin
         '
         Me.PanelLogin.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PanelLogin.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.PanelLogin.BackColor = System.Drawing.Color.FromArgb(CType(CType(184, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.PanelLogin.Controls.Add(Me.IconButton2)
         Me.PanelLogin.Controls.Add(Me.btnApagar)
         Me.PanelLogin.Location = New System.Drawing.Point(917, 440)
@@ -228,43 +97,9 @@ Partial Class FastOS_Desktop
         Me.PanelLogin.Size = New System.Drawing.Size(100, 100)
         Me.PanelLogin.TabIndex = 2
         '
-        'IconButton2
-        '
-        Me.IconButton2.FlatAppearance.BorderSize = 0
-        Me.IconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.IconButton2.IconChar = FontAwesome.Sharp.IconChar.SignOut
-        Me.IconButton2.IconColor = System.Drawing.Color.Black
-        Me.IconButton2.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconButton2.IconSize = 30
-        Me.IconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.IconButton2.Location = New System.Drawing.Point(3, 12)
-        Me.IconButton2.Name = "IconButton2"
-        Me.IconButton2.Size = New System.Drawing.Size(94, 35)
-        Me.IconButton2.TabIndex = 10
-        Me.IconButton2.Text = "Cerrar Sesion"
-        Me.IconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.IconButton2.UseVisualStyleBackColor = True
-        '
-        'btnApagar
-        '
-        Me.btnApagar.FlatAppearance.BorderSize = 0
-        Me.btnApagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnApagar.IconChar = FontAwesome.Sharp.IconChar.PowerOff
-        Me.btnApagar.IconColor = System.Drawing.Color.Black
-        Me.btnApagar.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.btnApagar.IconSize = 30
-        Me.btnApagar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnApagar.Location = New System.Drawing.Point(3, 53)
-        Me.btnApagar.Name = "btnApagar"
-        Me.btnApagar.Size = New System.Drawing.Size(94, 35)
-        Me.btnApagar.TabIndex = 9
-        Me.btnApagar.Text = "Apagar"
-        Me.btnApagar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnApagar.UseVisualStyleBackColor = True
-        '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(184, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.Panel1.Controls.Add(Me.btnPower)
         Me.Panel1.Controls.Add(Me.lblFecha)
         Me.Panel1.Controls.Add(Me.lblHora)
@@ -274,24 +109,10 @@ Partial Class FastOS_Desktop
         Me.Panel1.Size = New System.Drawing.Size(1023, 50)
         Me.Panel1.TabIndex = 2
         '
-        'btnPower
-        '
-        Me.btnPower.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnPower.FlatAppearance.BorderSize = 0
-        Me.btnPower.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPower.IconChar = FontAwesome.Sharp.IconChar.PowerOff
-        Me.btnPower.IconColor = System.Drawing.Color.Black
-        Me.btnPower.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.btnPower.IconSize = 30
-        Me.btnPower.Location = New System.Drawing.Point(885, 2)
-        Me.btnPower.Name = "btnPower"
-        Me.btnPower.Size = New System.Drawing.Size(45, 45)
-        Me.btnPower.TabIndex = 16
-        Me.btnPower.UseVisualStyleBackColor = True
-        '
         'lblFecha
         '
         Me.lblFecha.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblFecha.ForeColor = System.Drawing.SystemColors.Window
         Me.lblFecha.Location = New System.Drawing.Point(936, 26)
         Me.lblFecha.Name = "lblFecha"
         Me.lblFecha.Size = New System.Drawing.Size(75, 13)
@@ -302,6 +123,7 @@ Partial Class FastOS_Desktop
         'lblHora
         '
         Me.lblHora.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblHora.ForeColor = System.Drawing.SystemColors.Window
         Me.lblHora.Location = New System.Drawing.Point(936, 11)
         Me.lblHora.Name = "lblHora"
         Me.lblHora.Size = New System.Drawing.Size(75, 13)
@@ -326,6 +148,232 @@ Partial Class FastOS_Desktop
         '
         Me.tmrOcultar2.Interval = 15
         '
+        'IconButton2
+        '
+        Me.IconButton2.FlatAppearance.BorderSize = 0
+        Me.IconButton2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(184, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.IconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.IconButton2.Font = New System.Drawing.Font("Segoe UI Variable Text", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.IconButton2.ForeColor = System.Drawing.SystemColors.ScrollBar
+        Me.IconButton2.IconChar = FontAwesome.Sharp.IconChar.SignOut
+        Me.IconButton2.IconColor = System.Drawing.SystemColors.ControlLight
+        Me.IconButton2.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.IconButton2.IconSize = 30
+        Me.IconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.IconButton2.Location = New System.Drawing.Point(3, 6)
+        Me.IconButton2.Name = "IconButton2"
+        Me.IconButton2.Size = New System.Drawing.Size(94, 47)
+        Me.IconButton2.TabIndex = 10
+        Me.IconButton2.Text = "Cerrar Sesion"
+        Me.IconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.IconButton2.UseVisualStyleBackColor = True
+        '
+        'btnApagar
+        '
+        Me.btnApagar.FlatAppearance.BorderSize = 0
+        Me.btnApagar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(184, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnApagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnApagar.Font = New System.Drawing.Font("Segoe UI Variable Text", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnApagar.ForeColor = System.Drawing.SystemColors.ScrollBar
+        Me.btnApagar.IconChar = FontAwesome.Sharp.IconChar.PowerOff
+        Me.btnApagar.IconColor = System.Drawing.SystemColors.ControlLight
+        Me.btnApagar.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btnApagar.IconSize = 30
+        Me.btnApagar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnApagar.Location = New System.Drawing.Point(3, 59)
+        Me.btnApagar.Name = "btnApagar"
+        Me.btnApagar.Size = New System.Drawing.Size(94, 35)
+        Me.btnApagar.TabIndex = 9
+        Me.btnApagar.Text = "Apagar"
+        Me.btnApagar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnApagar.UseVisualStyleBackColor = True
+        '
+        'btnPower
+        '
+        Me.btnPower.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnPower.FlatAppearance.BorderSize = 0
+        Me.btnPower.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(184, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnPower.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPower.IconChar = FontAwesome.Sharp.IconChar.PowerOff
+        Me.btnPower.IconColor = System.Drawing.SystemColors.ControlLight
+        Me.btnPower.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btnPower.IconSize = 30
+        Me.btnPower.Location = New System.Drawing.Point(885, 2)
+        Me.btnPower.Name = "btnPower"
+        Me.btnPower.Size = New System.Drawing.Size(45, 45)
+        Me.btnPower.TabIndex = 16
+        Me.btnPower.UseVisualStyleBackColor = True
+        '
+        'btnMenu
+        '
+        Me.btnMenu.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnMenu.FlatAppearance.BorderSize = 0
+        Me.btnMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(184, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMenu.IconChar = FontAwesome.Sharp.IconChar.Home
+        Me.btnMenu.IconColor = System.Drawing.SystemColors.ControlLight
+        Me.btnMenu.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btnMenu.IconSize = 30
+        Me.btnMenu.Location = New System.Drawing.Point(4, 3)
+        Me.btnMenu.Name = "btnMenu"
+        Me.btnMenu.Size = New System.Drawing.Size(50, 50)
+        Me.btnMenu.TabIndex = 15
+        Me.btnMenu.UseVisualStyleBackColor = True
+        '
+        'btnSettings
+        '
+        Me.btnSettings.FlatAppearance.BorderSize = 0
+        Me.btnSettings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(184, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSettings.Font = New System.Drawing.Font("Segoe UI Variable Text", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSettings.ForeColor = System.Drawing.SystemColors.ScrollBar
+        Me.btnSettings.IconChar = FontAwesome.Sharp.IconChar.UsersCog
+        Me.btnSettings.IconColor = System.Drawing.SystemColors.ControlLight
+        Me.btnSettings.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btnSettings.IconSize = 50
+        Me.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSettings.Location = New System.Drawing.Point(0, 411)
+        Me.btnSettings.Name = "btnSettings"
+        Me.btnSettings.Size = New System.Drawing.Size(220, 50)
+        Me.btnSettings.TabIndex = 14
+        Me.btnSettings.Text = "     Configuraciones"
+        Me.btnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSettings.UseVisualStyleBackColor = True
+        '
+        'btnGallery
+        '
+        Me.btnGallery.FlatAppearance.BorderSize = 0
+        Me.btnGallery.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(184, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnGallery.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGallery.Font = New System.Drawing.Font("Segoe UI Variable Text", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGallery.ForeColor = System.Drawing.SystemColors.ScrollBar
+        Me.btnGallery.IconChar = FontAwesome.Sharp.IconChar.Images
+        Me.btnGallery.IconColor = System.Drawing.SystemColors.ControlLight
+        Me.btnGallery.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btnGallery.IconSize = 50
+        Me.btnGallery.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnGallery.Location = New System.Drawing.Point(0, 355)
+        Me.btnGallery.Name = "btnGallery"
+        Me.btnGallery.Size = New System.Drawing.Size(220, 50)
+        Me.btnGallery.TabIndex = 13
+        Me.btnGallery.Text = "     Galeria"
+        Me.btnGallery.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnGallery.UseVisualStyleBackColor = True
+        '
+        'btnTicTacToe
+        '
+        Me.btnTicTacToe.FlatAppearance.BorderSize = 0
+        Me.btnTicTacToe.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(184, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnTicTacToe.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnTicTacToe.Font = New System.Drawing.Font("Segoe UI Variable Text", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTicTacToe.ForeColor = System.Drawing.SystemColors.ScrollBar
+        Me.btnTicTacToe.IconChar = FontAwesome.Sharp.IconChar.Gamepad
+        Me.btnTicTacToe.IconColor = System.Drawing.SystemColors.ControlLight
+        Me.btnTicTacToe.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btnTicTacToe.IconSize = 50
+        Me.btnTicTacToe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnTicTacToe.Location = New System.Drawing.Point(0, 299)
+        Me.btnTicTacToe.Name = "btnTicTacToe"
+        Me.btnTicTacToe.Size = New System.Drawing.Size(220, 50)
+        Me.btnTicTacToe.TabIndex = 12
+        Me.btnTicTacToe.Text = "     Tres en Raya"
+        Me.btnTicTacToe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnTicTacToe.UseVisualStyleBackColor = True
+        '
+        'btnPlayer
+        '
+        Me.btnPlayer.FlatAppearance.BorderSize = 0
+        Me.btnPlayer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(184, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnPlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPlayer.Font = New System.Drawing.Font("Segoe UI Variable Text", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPlayer.ForeColor = System.Drawing.SystemColors.ScrollBar
+        Me.btnPlayer.IconChar = FontAwesome.Sharp.IconChar.Play
+        Me.btnPlayer.IconColor = System.Drawing.SystemColors.ControlLight
+        Me.btnPlayer.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btnPlayer.IconSize = 50
+        Me.btnPlayer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnPlayer.Location = New System.Drawing.Point(0, 243)
+        Me.btnPlayer.Name = "btnPlayer"
+        Me.btnPlayer.Size = New System.Drawing.Size(220, 50)
+        Me.btnPlayer.TabIndex = 11
+        Me.btnPlayer.Text = "     Reproductor de Musica"
+        Me.btnPlayer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnPlayer.UseVisualStyleBackColor = True
+        '
+        'btnTXTEditor
+        '
+        Me.btnTXTEditor.FlatAppearance.BorderSize = 0
+        Me.btnTXTEditor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(184, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnTXTEditor.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnTXTEditor.Font = New System.Drawing.Font("Segoe UI Variable Text", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTXTEditor.ForeColor = System.Drawing.SystemColors.ScrollBar
+        Me.btnTXTEditor.IconChar = FontAwesome.Sharp.IconChar.FileAlt
+        Me.btnTXTEditor.IconColor = System.Drawing.SystemColors.ControlLight
+        Me.btnTXTEditor.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btnTXTEditor.IconSize = 50
+        Me.btnTXTEditor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnTXTEditor.Location = New System.Drawing.Point(0, 187)
+        Me.btnTXTEditor.Name = "btnTXTEditor"
+        Me.btnTXTEditor.Size = New System.Drawing.Size(220, 50)
+        Me.btnTXTEditor.TabIndex = 10
+        Me.btnTXTEditor.Text = "     Editor de Texto"
+        Me.btnTXTEditor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnTXTEditor.UseVisualStyleBackColor = True
+        '
+        'btnCalculator
+        '
+        Me.btnCalculator.FlatAppearance.BorderSize = 0
+        Me.btnCalculator.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(184, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnCalculator.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCalculator.Font = New System.Drawing.Font("Segoe UI Variable Text", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCalculator.ForeColor = System.Drawing.SystemColors.ScrollBar
+        Me.btnCalculator.IconChar = FontAwesome.Sharp.IconChar.Calculator
+        Me.btnCalculator.IconColor = System.Drawing.SystemColors.ControlLight
+        Me.btnCalculator.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btnCalculator.IconSize = 50
+        Me.btnCalculator.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCalculator.Location = New System.Drawing.Point(0, 131)
+        Me.btnCalculator.Name = "btnCalculator"
+        Me.btnCalculator.Size = New System.Drawing.Size(220, 50)
+        Me.btnCalculator.TabIndex = 9
+        Me.btnCalculator.Text = "     Calculadora"
+        Me.btnCalculator.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnCalculator.UseVisualStyleBackColor = True
+        '
+        'btnBrowser
+        '
+        Me.btnBrowser.FlatAppearance.BorderSize = 0
+        Me.btnBrowser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(184, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnBrowser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBrowser.Font = New System.Drawing.Font("Segoe UI Variable Text", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBrowser.ForeColor = System.Drawing.SystemColors.ScrollBar
+        Me.btnBrowser.IconChar = FontAwesome.Sharp.IconChar.Chrome
+        Me.btnBrowser.IconColor = System.Drawing.SystemColors.ControlLight
+        Me.btnBrowser.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btnBrowser.IconSize = 50
+        Me.btnBrowser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnBrowser.Location = New System.Drawing.Point(0, 75)
+        Me.btnBrowser.Name = "btnBrowser"
+        Me.btnBrowser.Size = New System.Drawing.Size(220, 50)
+        Me.btnBrowser.TabIndex = 8
+        Me.btnBrowser.Text = "     Navegador"
+        Me.btnBrowser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnBrowser.UseVisualStyleBackColor = True
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Image = Global.FastOS.My.Resources.Resources.img103
+        Me.PictureBox1.Location = New System.Drawing.Point(60, 0)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(1023, 540)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 3
+        Me.PictureBox1.TabStop = False
+        '
         'FastOS_Desktop
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -334,17 +382,19 @@ Partial Class FastOS_Desktop
         Me.Controls.Add(Me.PanelLogin)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PanelMenu)
-        Me.Controls.Add(Me.PanelEscritorio)
+        Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MinimumSize = New System.Drawing.Size(1083, 590)
         Me.Name = "FastOS_Desktop"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FastOS"
+        Me.TransparencyKey = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.PanelMenu.ResumeLayout(False)
+        Me.PanelMenu.PerformLayout()
         Me.PanelLogin.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -370,4 +420,5 @@ Partial Class FastOS_Desktop
     Friend WithEvents btnApagar As FontAwesome.Sharp.IconButton
     Friend WithEvents tmrMostrar2 As Timer
     Friend WithEvents tmrOcultar2 As Timer
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

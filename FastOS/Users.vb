@@ -354,4 +354,28 @@ Public Class Users
         LimpiarN()
     End Sub
 
+    Private Sub pic1_Click(sender As Object, e As EventArgs) Handles pic1.Click
+        FastOS_Desktop.PictureBox1.Image = My.Resources.Resources.img103
+        'Label5.Text = "xd"
+    End Sub
+
+    Private Sub pic2_Click(sender As Object, e As EventArgs) Handles pic2.Click
+        FastOS_Desktop.PictureBox1.Image = My.Resources.Resources.img100
+    End Sub
+
+    Private Sub pic3_Click(sender As Object, e As EventArgs) Handles pic3.Click
+        FastOS_Desktop.PictureBox1.Image = pic3.Image
+    End Sub
+
+    Private Sub pic4_Click(sender As Object, e As EventArgs) Handles pic4.Click
+        FastOS_Desktop.PictureBox1.Image = pic4.Image
+    End Sub
+
+    Private Sub pic5_Click(sender As Object, e As EventArgs) Handles pic5.Click
+        FastOS_Desktop.PictureBox1.Image = pic5.Image
+    End Sub
+
+    Private Sub pic6_Click(sender As Object, e As EventArgs) Handles pic6.Click
+        FastOS_Desktop.PictureBox1.Image = pic6.Image
+    End Sub
 End Class

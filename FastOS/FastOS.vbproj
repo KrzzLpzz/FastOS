@@ -138,16 +138,16 @@
       <DependentUpon>Calculator.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="MP3Player.Designer.vb">
       <DependentUpon>MP3Player.vb</DependentUpon>
     </Compile>
     <Compile Include="MP3Player.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.Designer.vb">
+      <DependentUpon>Settings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Snake.Designer.vb">
@@ -228,11 +228,11 @@
     <EmbeddedResource Include="Calculator.resx">
       <DependentUpon>Calculator.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MP3Player.resx">
       <DependentUpon>MP3Player.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Snake.resx">
       <DependentUpon>Snake.vb</DependentUpon>
@@ -368,6 +368,51 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Nav.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img103.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img100.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img101.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img102.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img1031.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img104.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img105.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TouchKeyboardThemeDark000.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TouchKeyboardThemeDark001.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TouchKeyboardThemeDark002.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TouchKeyboardThemeDark003.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TouchKeyboardThemeLight000.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TouchKeyboardThemeLight001.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TouchKeyboardThemeLight002.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TouchKeyboardThemeLight003.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Import Project="..\packages\Microsoft.Web.WebView2.1.0.1370.28\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.1370.28\build\Microsoft.Web.WebView2.targets')" />

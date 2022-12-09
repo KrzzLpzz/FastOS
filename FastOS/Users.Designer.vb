@@ -51,16 +51,36 @@ Partial Class Users
         Me.btnRegistrar = New System.Windows.Forms.Button()
         Me.lblSaveNew = New System.Windows.Forms.Label()
         Me.LblUID = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.btnSeleccionar = New System.Windows.Forms.Button()
+        Me.btnAplicar = New System.Windows.Forms.Button()
+        Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.pic6 = New System.Windows.Forms.PictureBox()
+        Me.pic5 = New System.Windows.Forms.PictureBox()
+        Me.pic4 = New System.Windows.Forms.PictureBox()
+        Me.pic3 = New System.Windows.Forms.PictureBox()
+        Me.pic2 = New System.Windows.Forms.PictureBox()
+        Me.pic1 = New System.Windows.Forms.PictureBox()
         Me.gpbExistentes.SuspendLayout()
         Me.gpbNuevo.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        CType(Me.pic6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pic5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pic4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pic3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pic2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pic1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblTitle
         '
         Me.lblTitle.AutoSize = True
-        Me.lblTitle.Location = New System.Drawing.Point(176, 22)
+        Me.lblTitle.Font = New System.Drawing.Font("Segoe UI Variable Display", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitle.Location = New System.Drawing.Point(125, 9)
         Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(134, 13)
+        Me.lblTitle.Size = New System.Drawing.Size(217, 21)
         Me.lblTitle.TabIndex = 0
         Me.lblTitle.Text = "Administracion de Usuarios"
         '
@@ -79,7 +99,7 @@ Partial Class Users
         Me.gpbExistentes.Controls.Add(Me.txtUser)
         Me.gpbExistentes.Controls.Add(Me.cboPrivilegios)
         Me.gpbExistentes.Controls.Add(Me.btnBuscar)
-        Me.gpbExistentes.Location = New System.Drawing.Point(20, 44)
+        Me.gpbExistentes.Location = New System.Drawing.Point(10, 33)
         Me.gpbExistentes.Name = "gpbExistentes"
         Me.gpbExistentes.Size = New System.Drawing.Size(446, 91)
         Me.gpbExistentes.TabIndex = 1
@@ -212,7 +232,7 @@ Partial Class Users
         Me.gpbNuevo.Controls.Add(Me.txtNUser)
         Me.gpbNuevo.Controls.Add(Me.cboNPrivilegio)
         Me.gpbNuevo.Controls.Add(Me.btnRegistrar)
-        Me.gpbNuevo.Location = New System.Drawing.Point(20, 149)
+        Me.gpbNuevo.Location = New System.Drawing.Point(10, 130)
         Me.gpbNuevo.Name = "gpbNuevo"
         Me.gpbNuevo.Size = New System.Drawing.Size(446, 100)
         Me.gpbNuevo.TabIndex = 6
@@ -318,40 +338,179 @@ Partial Class Users
         '
         Me.lblSaveNew.AutoSize = True
         Me.lblSaveNew.ForeColor = System.Drawing.SystemColors.AppWorkspace
-        Me.lblSaveNew.Location = New System.Drawing.Point(18, 253)
+        Me.lblSaveNew.Location = New System.Drawing.Point(210, 127)
         Me.lblSaveNew.Name = "lblSaveNew"
         Me.lblSaveNew.Size = New System.Drawing.Size(39, 13)
         Me.lblSaveNew.TabIndex = 7
         Me.lblSaveNew.Text = "Label1"
+        Me.lblSaveNew.Visible = False
         '
         'LblUID
         '
         Me.LblUID.AutoSize = True
         Me.LblUID.ForeColor = System.Drawing.SystemColors.AppWorkspace
-        Me.LblUID.Location = New System.Drawing.Point(63, 253)
+        Me.LblUID.Location = New System.Drawing.Point(255, 127)
         Me.LblUID.Name = "LblUID"
         Me.LblUID.Size = New System.Drawing.Size(39, 13)
         Me.LblUID.TabIndex = 8
         Me.LblUID.Text = "Label1"
+        Me.LblUID.Visible = False
+        '
+        'Panel1
+        '
+        Me.Panel1.AutoScroll = True
+        Me.Panel1.Controls.Add(Me.btnCancelar)
+        Me.Panel1.Controls.Add(Me.btnAplicar)
+        Me.Panel1.Controls.Add(Me.btnSeleccionar)
+        Me.Panel1.Controls.Add(Me.pic6)
+        Me.Panel1.Controls.Add(Me.pic5)
+        Me.Panel1.Controls.Add(Me.pic4)
+        Me.Panel1.Controls.Add(Me.pic3)
+        Me.Panel1.Controls.Add(Me.pic2)
+        Me.Panel1.Controls.Add(Me.pic1)
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.lblTitle)
+        Me.Panel1.Controls.Add(Me.LblUID)
+        Me.Panel1.Controls.Add(Me.gpbExistentes)
+        Me.Panel1.Controls.Add(Me.lblSaveNew)
+        Me.Panel1.Controls.Add(Me.gpbNuevo)
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(484, 247)
+        Me.Panel1.TabIndex = 9
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI Variable Display", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(162, 247)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(143, 21)
+        Me.Label5.TabIndex = 9
+        Me.Label5.Text = "Fondo de Pantalla"
+        '
+        'btnSeleccionar
+        '
+        Me.btnSeleccionar.Location = New System.Drawing.Point(115, 440)
+        Me.btnSeleccionar.Name = "btnSeleccionar"
+        Me.btnSeleccionar.Size = New System.Drawing.Size(75, 43)
+        Me.btnSeleccionar.TabIndex = 16
+        Me.btnSeleccionar.Text = "Seleccionar Imagen"
+        Me.btnSeleccionar.UseVisualStyleBackColor = True
+        '
+        'btnAplicar
+        '
+        Me.btnAplicar.Location = New System.Drawing.Point(196, 440)
+        Me.btnAplicar.Name = "btnAplicar"
+        Me.btnAplicar.Size = New System.Drawing.Size(75, 43)
+        Me.btnAplicar.TabIndex = 17
+        Me.btnAplicar.Text = "Aplicar Cambios"
+        Me.btnAplicar.UseVisualStyleBackColor = True
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.Location = New System.Drawing.Point(277, 440)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(75, 43)
+        Me.btnCancelar.TabIndex = 18
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = True
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label6.Location = New System.Drawing.Point(216, 478)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(39, 13)
+        Me.Label6.TabIndex = 19
+        Me.Label6.Text = "Label6"
+        '
+        'pic6
+        '
+        Me.pic6.Image = Global.FastOS.My.Resources.Resources.TouchKeyboardThemeDark003
+        Me.pic6.Location = New System.Drawing.Point(306, 358)
+        Me.pic6.Name = "pic6"
+        Me.pic6.Size = New System.Drawing.Size(133, 75)
+        Me.pic6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pic6.TabIndex = 15
+        Me.pic6.TabStop = False
+        '
+        'pic5
+        '
+        Me.pic5.Image = Global.FastOS.My.Resources.Resources.img104
+        Me.pic5.Location = New System.Drawing.Point(167, 358)
+        Me.pic5.Name = "pic5"
+        Me.pic5.Size = New System.Drawing.Size(133, 75)
+        Me.pic5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pic5.TabIndex = 14
+        Me.pic5.TabStop = False
+        '
+        'pic4
+        '
+        Me.pic4.Image = Global.FastOS.My.Resources.Resources.img102
+        Me.pic4.Location = New System.Drawing.Point(28, 358)
+        Me.pic4.Name = "pic4"
+        Me.pic4.Size = New System.Drawing.Size(133, 75)
+        Me.pic4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pic4.TabIndex = 13
+        Me.pic4.TabStop = False
+        '
+        'pic3
+        '
+        Me.pic3.Image = Global.FastOS.My.Resources.Resources.img101
+        Me.pic3.Location = New System.Drawing.Point(306, 277)
+        Me.pic3.Name = "pic3"
+        Me.pic3.Size = New System.Drawing.Size(133, 75)
+        Me.pic3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pic3.TabIndex = 12
+        Me.pic3.TabStop = False
+        '
+        'pic2
+        '
+        Me.pic2.Image = Global.FastOS.My.Resources.Resources.img100
+        Me.pic2.Location = New System.Drawing.Point(167, 277)
+        Me.pic2.Name = "pic2"
+        Me.pic2.Size = New System.Drawing.Size(133, 75)
+        Me.pic2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pic2.TabIndex = 11
+        Me.pic2.TabStop = False
+        '
+        'pic1
+        '
+        Me.pic1.Image = Global.FastOS.My.Resources.Resources.img103
+        Me.pic1.Location = New System.Drawing.Point(28, 277)
+        Me.pic1.Name = "pic1"
+        Me.pic1.Size = New System.Drawing.Size(133, 75)
+        Me.pic1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pic1.TabIndex = 10
+        Me.pic1.TabStop = False
         '
         'Users
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(486, 270)
-        Me.Controls.Add(Me.LblUID)
-        Me.Controls.Add(Me.lblSaveNew)
-        Me.Controls.Add(Me.gpbNuevo)
-        Me.Controls.Add(Me.gpbExistentes)
-        Me.Controls.Add(Me.lblTitle)
+        Me.ClientSize = New System.Drawing.Size(484, 247)
+        Me.Controls.Add(Me.Panel1)
+        Me.MaximumSize = New System.Drawing.Size(500, 535)
+        Me.MinimumSize = New System.Drawing.Size(500, 286)
         Me.Name = "Users"
         Me.Text = "Users"
         Me.gpbExistentes.ResumeLayout(False)
         Me.gpbExistentes.PerformLayout()
         Me.gpbNuevo.ResumeLayout(False)
         Me.gpbNuevo.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        CType(Me.pic6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pic5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pic4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pic3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pic2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pic1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -384,4 +543,16 @@ Partial Class Users
     Friend WithEvents btnLimpiar As Button
     Friend WithEvents chkMostrarContra As CheckBox
     Friend WithEvents chkMostrarNContra As CheckBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents btnCancelar As Button
+    Friend WithEvents btnAplicar As Button
+    Friend WithEvents btnSeleccionar As Button
+    Friend WithEvents pic6 As PictureBox
+    Friend WithEvents pic5 As PictureBox
+    Friend WithEvents pic4 As PictureBox
+    Friend WithEvents pic3 As PictureBox
+    Friend WithEvents pic2 As PictureBox
+    Friend WithEvents pic1 As PictureBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
 End Class

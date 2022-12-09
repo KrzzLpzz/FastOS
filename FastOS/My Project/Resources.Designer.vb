@@ -153,9 +153,79 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property img100() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("img100", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property img100_blur() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("img100_blur", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property img101() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("img101", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property img102() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("img102", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property img103() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("img103", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property img1031() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("img1031", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property img104() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("img104", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property img105() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("img105", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -256,6 +326,86 @@ Namespace My.Resources
         Friend ReadOnly Property tanit() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("tanit", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property TouchKeyboardThemeDark000() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("TouchKeyboardThemeDark000", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property TouchKeyboardThemeDark001() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("TouchKeyboardThemeDark001", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property TouchKeyboardThemeDark002() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("TouchKeyboardThemeDark002", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property TouchKeyboardThemeDark003() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("TouchKeyboardThemeDark003", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property TouchKeyboardThemeLight000() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("TouchKeyboardThemeLight000", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property TouchKeyboardThemeLight001() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("TouchKeyboardThemeLight001", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property TouchKeyboardThemeLight002() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("TouchKeyboardThemeLight002", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property TouchKeyboardThemeLight003() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("TouchKeyboardThemeLight003", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

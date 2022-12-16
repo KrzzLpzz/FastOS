@@ -22,6 +22,7 @@ Partial Class Gallery
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Gallery))
         Me.Label2 = New System.Windows.Forms.Label()
         Me.dgvImagenes = New System.Windows.Forms.DataGridView()
         Me.btnExaminar = New System.Windows.Forms.Button()
@@ -211,6 +212,10 @@ Partial Class Gallery
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.dgvImagenes)
         Me.Controls.Add(Me.picImagen)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(634, 401)
+        Me.MinimumSize = New System.Drawing.Size(634, 401)
         Me.Name = "Gallery"
         Me.Text = "Galeria"
         CType(Me.dgvImagenes, System.ComponentModel.ISupportInitialize).EndInit()

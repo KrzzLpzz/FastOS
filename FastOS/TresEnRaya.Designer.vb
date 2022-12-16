@@ -22,6 +22,7 @@ Partial Class TresEnRaya
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TresEnRaya))
         Me.BTN1 = New System.Windows.Forms.Button()
         Me.BTN2 = New System.Windows.Forms.Button()
         Me.BTN3 = New System.Windows.Forms.Button()
@@ -158,6 +159,10 @@ Partial Class TresEnRaya
         Me.Controls.Add(Me.BTN3)
         Me.Controls.Add(Me.BTN2)
         Me.Controls.Add(Me.BTN1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(318, 390)
+        Me.MinimumSize = New System.Drawing.Size(318, 390)
         Me.Name = "TresEnRaya"
         Me.Text = "Tres en Raya"
         Me.ResumeLayout(False)

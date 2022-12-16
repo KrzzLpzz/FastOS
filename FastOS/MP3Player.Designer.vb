@@ -42,7 +42,6 @@ Partial Class MP3Player
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OFileD = New System.Windows.Forms.OpenFileDialog()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.WMP = New AxWMPLib.AxWindowsMediaPlayer()
         Me.BtnAbaut = New System.Windows.Forms.Button()
         Me.BtnMinimize = New System.Windows.Forms.Button()
         Me.BtnVolUp = New System.Windows.Forms.Button()
@@ -51,8 +50,9 @@ Partial Class MP3Player
         Me.BtnNext = New System.Windows.Forms.Button()
         Me.BtnAnt = New System.Windows.Forms.Button()
         Me.BtnPause = New System.Windows.Forms.Button()
-        Me.BtnPlay = New System.Windows.Forms.Button()
         Me.BtnAdd = New System.Windows.Forms.Button()
+        Me.WMP = New AxWMPLib.AxWindowsMediaPlayer()
+        Me.BtnPlay = New System.Windows.Forms.Button()
         Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.WMP, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -166,15 +166,6 @@ Partial Class MP3Player
         Me.OFileD.Multiselect = True
         Me.OFileD.Title = "Selecion de archivos"
         '
-        'WMP
-        '
-        Me.WMP.Enabled = True
-        Me.WMP.Location = New System.Drawing.Point(3, 12)
-        Me.WMP.Name = "WMP"
-        Me.WMP.OcxState = CType(resources.GetObject("WMP.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.WMP.Size = New System.Drawing.Size(352, 277)
-        Me.WMP.TabIndex = 12
-        '
         'BtnAbaut
         '
         Me.BtnAbaut.Location = New System.Drawing.Point(499, 302)
@@ -255,15 +246,6 @@ Partial Class MP3Player
         Me.ToolTip1.SetToolTip(Me.BtnPause, "Pause")
         Me.BtnPause.UseVisualStyleBackColor = True
         '
-        'BtnPlay
-        '
-        Me.BtnPlay.BackgroundImage = Global.FastOS.My.Resources.Resources.play
-        Me.BtnPlay.Location = New System.Drawing.Point(6, 295)
-        Me.BtnPlay.Name = "BtnPlay"
-        Me.BtnPlay.Size = New System.Drawing.Size(52, 55)
-        Me.BtnPlay.TabIndex = 25
-        Me.BtnPlay.UseVisualStyleBackColor = True
-        '
         'BtnAdd
         '
         Me.BtnAdd.BackgroundImage = Global.FastOS.My.Resources.Resources.download_for_windows
@@ -273,6 +255,24 @@ Partial Class MP3Player
         Me.BtnAdd.TabIndex = 22
         Me.ToolTip1.SetToolTip(Me.BtnAdd, "Abrir Archivos multimedia")
         Me.BtnAdd.UseVisualStyleBackColor = True
+        '
+        'WMP
+        '
+        Me.WMP.Enabled = True
+        Me.WMP.Location = New System.Drawing.Point(3, 12)
+        Me.WMP.Name = "WMP"
+        Me.WMP.OcxState = CType(resources.GetObject("WMP.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.WMP.Size = New System.Drawing.Size(352, 277)
+        Me.WMP.TabIndex = 12
+        '
+        'BtnPlay
+        '
+        Me.BtnPlay.BackgroundImage = Global.FastOS.My.Resources.Resources.play
+        Me.BtnPlay.Location = New System.Drawing.Point(6, 295)
+        Me.BtnPlay.Name = "BtnPlay"
+        Me.BtnPlay.Size = New System.Drawing.Size(52, 55)
+        Me.BtnPlay.TabIndex = 25
+        Me.BtnPlay.UseVisualStyleBackColor = True
         '
         'MP3Player
         '
@@ -294,7 +294,8 @@ Partial Class MP3Player
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
-        Me.MinimizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(562, 391)
+        Me.MinimumSize = New System.Drawing.Size(562, 391)
         Me.Name = "MP3Player"
         Me.Text = "Media Player"
         Me.ContextMenuStrip1.ResumeLayout(False)

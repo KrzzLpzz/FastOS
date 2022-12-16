@@ -23,6 +23,7 @@ Partial Class FastOS
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FastOS))
         Me.Screen = New System.Windows.Forms.Panel()
         Me.LSTimer = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
@@ -48,6 +49,7 @@ Partial Class FastOS
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1083, 590)
         Me.Controls.Add(Me.Screen)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.MinimumSize = New System.Drawing.Size(1099, 629)
         Me.Name = "FastOS"

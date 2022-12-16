@@ -114,20 +114,10 @@ Public Class Desktop
 
         TresEnRaya.Show()
     End Sub
-    Private Sub Snake(frmHijo7 As Object)
-        Dim Snake As New Snake
-        Snake = frmHijo7
-        Snake.TopLevel = False
-        Snake.TopMost = True
 
-        Me.Screen2.Controls.Add(Snake)
-        Me.Screen2.Tag = Snake
-
-        Snake.Show()
-    End Sub
 
     Private Sub btnSnake_Click(sender As Object, e As EventArgs) Handles btnSnake.Click
-        Snake(New Snake)
+
     End Sub
 
     Private Sub btnTxtLoad_Click(sender As Object, e As EventArgs) Handles btnTxtLoad.Click

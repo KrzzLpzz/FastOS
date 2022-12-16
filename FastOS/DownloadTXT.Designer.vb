@@ -23,16 +23,17 @@ Partial Class DownloadTXT
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DownloadTXT))
         Me.dgvFiles = New System.Windows.Forms.DataGridView()
         Me.Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NameFile = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.File = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.lblIdFile = New System.Windows.Forms.Label()
         Me.lblTID = New System.Windows.Forms.Label()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnAbrir = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.dgvFiles, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -81,6 +82,15 @@ Partial Class DownloadTXT
         Me.Panel1.Size = New System.Drawing.Size(398, 41)
         Me.Panel1.TabIndex = 1
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(4, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(39, 13)
+        Me.Label1.TabIndex = 4
+        Me.Label1.Text = "Label1"
+        '
         'lblIdFile
         '
         Me.lblIdFile.AutoSize = True
@@ -119,15 +129,6 @@ Partial Class DownloadTXT
         Me.btnAbrir.Text = "Abrir"
         Me.btnAbrir.UseVisualStyleBackColor = True
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 13)
-        Me.Label1.TabIndex = 4
-        Me.Label1.Text = "Label1"
-        '
         'DownloadTXT
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -136,6 +137,7 @@ Partial Class DownloadTXT
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.dgvFiles)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "DownloadTXT"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

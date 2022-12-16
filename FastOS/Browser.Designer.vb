@@ -22,14 +22,15 @@ Partial Class Browser
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Browser))
         Me.Navigation = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BarraDeBusqueda = New System.Windows.Forms.ToolStripTextBox()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.Retroceder = New System.Windows.Forms.ToolStripButton()
         Me.Avanzar = New System.Windows.Forms.ToolStripButton()
         Me.Actualizar = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.BarraDeBusqueda = New System.Windows.Forms.ToolStripTextBox()
         Me.Ir = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.WebBrowser = New Microsoft.Web.WebView2.WinForms.WebView2()
         Me.Navigation.SuspendLayout()
         CType(Me.WebBrowser, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -41,25 +42,9 @@ Partial Class Browser
         Me.Navigation.Location = New System.Drawing.Point(0, 0)
         Me.Navigation.Name = "Navigation"
         Me.Navigation.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.Navigation.Size = New System.Drawing.Size(686, 25)
+        Me.Navigation.Size = New System.Drawing.Size(603, 25)
         Me.Navigation.TabIndex = 0
         Me.Navigation.Text = "Navigation"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
-        '
-        'BarraDeBusqueda
-        '
-        Me.BarraDeBusqueda.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.BarraDeBusqueda.Name = "BarraDeBusqueda"
-        Me.BarraDeBusqueda.Size = New System.Drawing.Size(360, 25)
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 25)
         '
         'Retroceder
         '
@@ -88,6 +73,17 @@ Partial Class Browser
         Me.Actualizar.Size = New System.Drawing.Size(23, 22)
         Me.Actualizar.Text = "Recargar"
         '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
+        '
+        'BarraDeBusqueda
+        '
+        Me.BarraDeBusqueda.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.BarraDeBusqueda.Name = "BarraDeBusqueda"
+        Me.BarraDeBusqueda.Size = New System.Drawing.Size(360, 25)
+        '
         'Ir
         '
         Me.Ir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
@@ -97,6 +93,11 @@ Partial Class Browser
         Me.Ir.Size = New System.Drawing.Size(23, 22)
         Me.Ir.Text = "ToolStripButton5"
         '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 25)
+        '
         'WebBrowser
         '
         Me.WebBrowser.AllowExternalDrop = True
@@ -105,7 +106,7 @@ Partial Class Browser
         Me.WebBrowser.Dock = System.Windows.Forms.DockStyle.Fill
         Me.WebBrowser.Location = New System.Drawing.Point(0, 25)
         Me.WebBrowser.Name = "WebBrowser"
-        Me.WebBrowser.Size = New System.Drawing.Size(686, 365)
+        Me.WebBrowser.Size = New System.Drawing.Size(603, 323)
         Me.WebBrowser.TabIndex = 1
         Me.WebBrowser.ZoomFactor = 1.0R
         '
@@ -113,9 +114,11 @@ Partial Class Browser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(686, 390)
+        Me.ClientSize = New System.Drawing.Size(603, 348)
         Me.Controls.Add(Me.WebBrowser)
         Me.Controls.Add(Me.Navigation)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MinimumSize = New System.Drawing.Size(619, 387)
         Me.Name = "Browser"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Browser"

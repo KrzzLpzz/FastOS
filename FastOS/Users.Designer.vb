@@ -22,6 +22,7 @@ Partial Class Users
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Users))
         Me.lblTitle = New System.Windows.Forms.Label()
         Me.gpbExistentes = New System.Windows.Forms.GroupBox()
         Me.btnLimpiar = New System.Windows.Forms.Button()
@@ -52,17 +53,17 @@ Partial Class Users
         Me.lblSaveNew = New System.Windows.Forms.Label()
         Me.LblUID = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.btnSeleccionar = New System.Windows.Forms.Button()
-        Me.btnAplicar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.btnAplicar = New System.Windows.Forms.Button()
+        Me.btnSeleccionar = New System.Windows.Forms.Button()
         Me.pic6 = New System.Windows.Forms.PictureBox()
         Me.pic5 = New System.Windows.Forms.PictureBox()
         Me.pic4 = New System.Windows.Forms.PictureBox()
         Me.pic3 = New System.Windows.Forms.PictureBox()
         Me.pic2 = New System.Windows.Forms.PictureBox()
         Me.pic1 = New System.Windows.Forms.PictureBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.gpbExistentes.SuspendLayout()
         Me.gpbNuevo.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -381,24 +382,14 @@ Partial Class Users
         Me.Panel1.Size = New System.Drawing.Size(484, 247)
         Me.Panel1.TabIndex = 9
         '
-        'Label5
+        'btnCancelar
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI Variable Display", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(162, 247)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(143, 21)
-        Me.Label5.TabIndex = 9
-        Me.Label5.Text = "Fondo de Pantalla"
-        '
-        'btnSeleccionar
-        '
-        Me.btnSeleccionar.Location = New System.Drawing.Point(115, 440)
-        Me.btnSeleccionar.Name = "btnSeleccionar"
-        Me.btnSeleccionar.Size = New System.Drawing.Size(75, 43)
-        Me.btnSeleccionar.TabIndex = 16
-        Me.btnSeleccionar.Text = "Seleccionar Imagen"
-        Me.btnSeleccionar.UseVisualStyleBackColor = True
+        Me.btnCancelar.Location = New System.Drawing.Point(277, 440)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(75, 43)
+        Me.btnCancelar.TabIndex = 18
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = True
         '
         'btnAplicar
         '
@@ -409,24 +400,14 @@ Partial Class Users
         Me.btnAplicar.Text = "Aplicar Cambios"
         Me.btnAplicar.UseVisualStyleBackColor = True
         '
-        'btnCancelar
+        'btnSeleccionar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(277, 440)
-        Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(75, 43)
-        Me.btnCancelar.TabIndex = 18
-        Me.btnCancelar.Text = "Cancelar"
-        Me.btnCancelar.UseVisualStyleBackColor = True
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label6.Location = New System.Drawing.Point(216, 478)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(39, 13)
-        Me.Label6.TabIndex = 19
-        Me.Label6.Text = "Label6"
+        Me.btnSeleccionar.Location = New System.Drawing.Point(115, 440)
+        Me.btnSeleccionar.Name = "btnSeleccionar"
+        Me.btnSeleccionar.Size = New System.Drawing.Size(75, 43)
+        Me.btnSeleccionar.TabIndex = 16
+        Me.btnSeleccionar.Text = "Seleccionar Imagen"
+        Me.btnSeleccionar.UseVisualStyleBackColor = True
         '
         'pic6
         '
@@ -488,16 +469,38 @@ Partial Class Users
         Me.pic1.TabIndex = 10
         Me.pic1.TabStop = False
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI Variable Display", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(162, 247)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(143, 21)
+        Me.Label5.TabIndex = 9
+        Me.Label5.Text = "Fondo de Pantalla"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label6.Location = New System.Drawing.Point(216, 478)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(39, 13)
+        Me.Label6.TabIndex = 19
+        Me.Label6.Text = "Label6"
+        '
         'Users
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(484, 247)
         Me.Controls.Add(Me.Panel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(500, 535)
         Me.MinimumSize = New System.Drawing.Size(500, 286)
         Me.Name = "Users"
-        Me.Text = "Users"
+        Me.Text = "Configuraciones"
         Me.gpbExistentes.ResumeLayout(False)
         Me.gpbExistentes.PerformLayout()
         Me.gpbNuevo.ResumeLayout(False)

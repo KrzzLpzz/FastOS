@@ -126,6 +126,9 @@
         If (Application.OpenForms("Users") Is Nothing) Then
             btnSettings.BackColor = Color.FromArgb(184, 50, 50)
         End If
+        If (Application.OpenForms("About") Is Nothing) Then
+            btnAbout.BackColor = Color.FromArgb(184, 50, 50)
+        End If
         If (Application.OpenForms("form2") Is Nothing) Then
             'Button3.BackColor = Color.FromArgb(4, 41, 68)
         End If
@@ -184,6 +187,12 @@
     Private Sub btnSettings_Click(sender As Object, e As EventArgs) Handles btnSettings.Click
         AbrirFormEnPanel(Of Users)()
         btnSettings.BackColor = Color.FromArgb(220, 60, 60)
+        ocultar()
+    End Sub
+
+    Private Sub btnAbout_Click(sender As Object, e As EventArgs) Handles btnAbout.Click
+        AbrirFormEnPanel(Of About)()
+        btnAbout.BackColor = Color.FromArgb(220, 60, 60)
         ocultar()
     End Sub
 End Class

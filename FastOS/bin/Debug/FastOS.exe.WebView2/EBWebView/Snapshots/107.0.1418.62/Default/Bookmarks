@@ -1,0 +1,69 @@
+{
+   "checksum": "40e878dfc53f9efdf8c50798dc8a1085",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13311463273506705",
+            "date_last_used": "0",
+            "guid": "4e028927-336b-439a-8b46-814400f8d5dc",
+            "id": "7",
+            "name": "Amazon",
+            "show_icon": false,
+            "source": "oem_preload",
+            "type": "url",
+            "url": "https://s3.amazonaws.com/amundsen/redirect/19q2/amazon.html?utm_source=win32&utm_medium=favorite"
+         }, {
+            "date_added": "13311463273506613",
+            "date_last_used": "0",
+            "guid": "1a1c21b9-0ce9-4d7d-a04d-ef542d26af62",
+            "id": "6",
+            "name": "Booking.com",
+            "show_icon": false,
+            "source": "oem_preload",
+            "type": "url",
+            "url": "https://s3.amazonaws.com/amundsen/redirect/19q2/booking.html?utm_source=win32&utm_medium=favorite"
+         }, {
+            "date_added": "13311463273506269",
+            "date_last_used": "0",
+            "guid": "454653b2-98b5-4661-b6c0-6cb630a86801",
+            "id": "5",
+            "name": "Facebook",
+            "show_icon": false,
+            "source": "oem_preload",
+            "type": "url",
+            "url": "https://s3.amazonaws.com/amundsen/redirect/20q2/facebook.html?utm_source=win32&utm_medium=favorite"
+         } ],
+         "date_added": "13311463273480816",
+         "date_last_used": "0",
+         "date_modified": "13311463273506705",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Barra de favoritos",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13311463273480819",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Otros favoritos",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13311463273480820",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Favoritos móviles",
+         "source": "unknown",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}

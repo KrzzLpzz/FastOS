@@ -8,12 +8,12 @@ Imports System.Runtime.InteropServices
 
 ' Revisar los valores de los atributos del ensamblado
 
-<Assembly: AssemblyTitle("UnknownOS")>
-<Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("UnknownOS")>
+<Assembly: AssemblyTitle("FastOS")>
+<Assembly: AssemblyDescription("FastOS, una simulacion de un sistema operativo con funciones basicas.")>
+<Assembly: AssemblyCompany("UnknownHN Inc.")>
+<Assembly: AssemblyProduct("FastOS")>
 <Assembly: AssemblyCopyright("Copyright ©  2022")>
-<Assembly: AssemblyTrademark("")>
+<Assembly: AssemblyTrademark("KrzzLpzz")>
 
 <Assembly: ComVisible(False)>
 
